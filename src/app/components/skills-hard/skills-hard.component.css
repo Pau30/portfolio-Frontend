@@ -1,0 +1,104 @@
+
+/*Estilo general*/
+.container-fluid {
+  color: #fff;
+}
+
+/*Estilo titulo principal*/
+
+h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: calc(1rem + 3vw);
+  text-align: start;
+  color: #00EBC6;
+  -webkit-text-stroke: 1px #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  padding: 1px;
+  position: relative;
+  text-shadow: 10px 10px 25px #089b85,
+    -10px 10px 25px #089b85,
+    -10px -10px 25px #089b85,
+    10px -10px 25px #089b85;
+}
+
+h1:hover {
+  animation: comein 1.5s 1 ease-in-out forwards;
+  animation-iteration-count: infinite;
+}
+
+/*Animacion titulo principal*/
+@keyframes comein {
+  0% {
+    letter-spacing: 80px;
+    color: rgba(255, 255, 255, 0);
+  }
+
+  70% {
+    letter-spacing: 15px;
+  }
+
+  100% {
+    letter-spacing: 20px;
+    color: #00EBC6;
+  }
+}
+
+/*Borde inferior titulo principal*/
+
+.titulo {
+  border-bottom: 1px solid #ffffff;
+}
+
+
+h4 {
+  text-align: center;
+  margin: 0 3%;
+  font-size: calc(.8rem + .8vw);
+}
+
+.font-weight-bold {
+  font-size: calc(.5rem + .5vw);
+}
+
+/* Estilos degrade de las barras de progreso de las skills*/
+
+.html {
+  background: linear-gradient(to left, #00C9FF 0%, #92FE9D 100%);
+}
+
+.css {
+  background: linear-gradient(to left, #8e4afc 0%, #2bf8f8 100%);
+}
+
+.bootstrap {
+  background: linear-gradient(to right, #333399 0%, #ff00cc 100%);
+}
+
+.javascript {
+  background: linear-gradient(to right, #ff00aa 0%, #ffea00 100%);
+}
+
+.angular {
+  background: linear-gradient(to left, #f11414 0%, #fe8c00 100%);
+}
+
+.java {
+  background: linear-gradient(to left, #bc4e9c 0%, #f80759 100%);
+}
+
+.spring {
+  background: linear-gradient(to left, #78ffd6 0%, #a8ff78 100%);
+}
+
+.mysql {
+  background: linear-gradient(to left, #514A9D 0%, #24C6DC 100%);
+}
+
+.ingles {
+  background: linear-gradient(to left, #ef32d9 0%, #89fffd 100%);
+}
+
+.japones {
+  background: linear-gradient(to left, #BB377D 0%, #FBD3E9 100%);
+}
