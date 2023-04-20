@@ -1,0 +1,30 @@
+.navbar {
+  margin-bottom: 10px;
+}
+
+#argprog {
+  height: 70px;
+  width: auto;
+}
+
+.navbar-nav.nav-item {
+  user-select: none;
+  font-size: medium;
+  font-weight: 400;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  transform: scale(110%);
+}
+
+.fa {
+  color: #fff;
+}
+
+.btn:hover {
+  transform: scale(120%);
+}
