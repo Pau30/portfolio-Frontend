@@ -1,7 +1,6 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SkillSoft } from 'src/app/model/skill-soft';
 import { SkillSoftService } from 'src/app/services/skill-soft.service';
 
 
@@ -14,7 +13,6 @@ export class SkillSoftAddEditComponent {
   traerData: any;
   editar: any;
   addMode = true;
- skillSoft: SkillSoft
   id: any;
 
   ngOnInit() { }
