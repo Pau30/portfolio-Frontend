@@ -1,22 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { SkillsHardComponent } from './components/skills-hard/skills-hard.component';
+import { SkillsSoftComponent } from './components/skills-soft/skills-soft.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavigationComponent,
-    AboutmeComponent
+    AboutmeComponent,
+    EducacionComponent,
+    ExperienciaComponent,
+    FooterComponent,
+    ProyectosComponent,
+    SkillsHardComponent,
+    SkillsSoftComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
