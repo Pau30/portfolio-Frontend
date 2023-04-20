@@ -1,0 +1,41 @@
+<div class="container-fluid  mb-5 flex-column">
+  <div class="container text-white">
+    <h1 class="titulo">Hola! Soy <b id="titulo">{{persona.nombre}}</b></h1>
+    <div class="container d-flex justify-content-end">
+     <i class="fa-solid fa-pencil m-2"></i>
+     <i class="fa-solid fa-trash m-2"></i>
+    </div>
+  </div>
+
+ <div class="container mb-4">
+  <div class="container d-flex justify-content-center align-items-center">
+   <img class="yoimg"  [src]="persona.imagen" alt="yo">
+   </div>
+   <div class="container d-flex justify-content-center">
+     <!-- Modal boton edicion -->
+     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#imagenModal">
+       <i class="fa-solid fa-pencil m-2 text-white"></i>
+     </button>
+     <!-- Modal boton elimier -->
+     <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="fa-solid fa-trash m-2 text-white"></i>
+    </button>
+
+   </div>
+ </div>
+
+ <div class="container d-flex align-items-center flex-column">
+          <div class="container text-left" id="descrip">
+        <p class="parrafo"> {{persona.descripcion}}
+         </p>
+      </div>
+      <div class="container d-flex justify-content-end">
+        <i class="fa-solid fa-pencil m-2"></i>
+        <i class="fa-solid fa-trash m-2"></i>
+      </div>
+</div>
+</div>
+
+
+
+
