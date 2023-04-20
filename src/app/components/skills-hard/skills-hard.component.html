@@ -1,1 +1,128 @@
-<p>skills-hard works!</p>
+<div class="container-fluid mt-5 mb-5" id="hard">
+
+  <div class="titulo m-5 d-flex flex-row justify-content-between">
+    <div><h1>Hard Skills</h1>
+    </div>
+
+    <!-- Modal boton agregar Skill -->
+    <div class="d-flex align-items-center justify-content-start" >
+       <button type="button" class="btn text-white fa fa-plus fa-2x" (click)="addEditSkill(id)"  >
+      </button>
+      <h5>Agregar</h5>
+    </div>
+  </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-10">
+<!-- Subtitulo -->
+        <div class="container d-flex flex-row justify-content-center mt-4">
+          <i class="fa-solid fa-laptop-code fa-2x text-white"></i>
+          <h4>Frontend</h4>
+        </div>
+<!-- Listado Frontend Skills -->
+        <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo">
+          <div class="container" *ngSwitchCase="'Frontend'">
+            <div class="container d-flex flex-row">
+              <div class="container d-flex align-items-end">
+                <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              </div>
+
+              <div class="container d-flex justify-content-end">
+                <!-- Modal boton edicion Frontend -->
+                <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)">
+                </button>
+                <!-- Boton eliminar Frontend -->
+                <button type="button" class="btn" (click)="deleteSkill(skill.id)">
+                  <i class="fa-solid fa-trash text-white"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Progress bar Frontend -->
+            <div class="progress">
+              <div class="progress-bar " role="progressbar" [style.width.%]="skill.porcentaje" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100"
+                [ngClass]="{'html': i == 0, 'css' : i==1, 'bootstrap': i==2, 'javascript': i==3, 'angular': i==4}">
+                {{skill.porcentaje}}%
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+      <div class="col-lg-5 col-md-10">
+        <div class="container d-flex align-items-center justify-content-center mt-4">
+          <i class="fa-solid fa-laptop-code fa-2x text-white"></i>
+          <h4>Backend</h4>
+
+        </div>
+
+        <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo">
+          <div class="container" *ngSwitchCase="'Backend'">
+            <div class="container d-flex flex-row">
+              <div class="container d-flex align-items-end">
+                <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              </div>
+
+              <div class="container d-flex justify-content-end">
+                <!-- Modal boton edicion Backend -->
+
+                <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)" >
+                </button>
+                <!-- Boton eliminar Backend -->
+                <button type="button" class="btn" (click)="deleteSkill(skill.id)">
+                  <i class="fa-solid fa-trash text-white"></i>
+                </button>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [style.width.%]="skill.porcentaje" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" [ngClass]="{'java': i == 5, 'spring' : i==6, 'mysql': i==7}">
+                {{skill.porcentaje}}%
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="container d-flex align-items-center justify-content-center mt-4 ">
+          <i class="fa-solid fa-language fa-2x text-white"></i>
+          <h4>Idiomas</h4>
+        </div>
+
+        <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo">
+          <div class="container " *ngSwitchCase="'Idioma'">
+            <div class="container d-flex flex-row">
+              <div class="container d-flex align-items-end">
+                <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              </div>
+
+              <div class="container d-flex justify-content-end">
+                <!-- Modal boton edicion Idioma -->
+
+                <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)" >
+                </button>
+                <!-- Boton eliminar Idioma -->
+                <button type="button" class="btn" (click)="deleteSkill(skill.id)" >
+                  <i class="fa-solid fa-trash text-white"></i>
+                </button>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [style.width.%]="skill.porcentaje" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" [ngClass]="{'ingles': i == 9, 'japones' : i==10}">
+                {{skill.porcentaje}}%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<app-skill-add-edit></app-skill-add-edit>
