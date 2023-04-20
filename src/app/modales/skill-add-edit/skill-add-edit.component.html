@@ -1,0 +1,65 @@
+<!-- Modal -->
+<ng-template #content let-modal>
+  <form [formGroup]="formAddEdit" (ngSubmit)="onSave($event)">
+
+    <!-- Titulo -->
+    <div class="modal-header">
+      <h5 class="modal-title" id="editSkillModalLabel" *ngIf="!addMode">Editar SKill</h5>
+      <h5 class="modal-title" id="addSkillModalLabel" *ngIf="addMode">Agregar SKill</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Input Nombre -->
+      <div class="mb-3">
+        <label for="InputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="EditarNombre" placeholder="Ingresar nombre"
+          [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+            Ingresar nombre
+          </p>
+        </div>
+      </div>
+
+      <!-- Input Porcentaje -->
+      <div class="mb-3">
+        <label for="InputPorcentaje" class="form-label">Porcentaje</label>
+        <input type="number" class="form-control" formControlName="porcentaje" id="EditarPorcentaje"
+          placeholder="Ingresar porcentaje"
+          [ngClass]="{'is-invalid': Porcentaje?.errors && Porcentaje?.touched, 'is-valid': !Porcentaje?.errors  && Porcentaje?.touched }">
+        <div *ngIf="Porcentaje?.errors  && Porcentaje?.touched">
+          <p *ngIf="Porcentaje?.hasError('required')" class="text-danger">
+            El porcentaje es requerido.
+          </p>
+          <p *ngIf="Porcentaje?.hasError('min')" class="text-danger">
+            El porcentaje debe ser mayor a 0
+          </p>
+          <p *ngIf="Porcentaje?.hasError('max')" class="text-danger">
+            El porcentaje debe ser menor a 100
+          </p>
+        </div>
+        <br />
+
+        <!-- Input Tipo -->
+        <div class="mb-3">
+          <label for="InputTipo" class="form-label">Tipo</label>
+          <input type="text" class="form-control" formControlName="tipo" id="InputEditarTipo"
+            placeholder="Editar tipo de skill"
+            [ngClass]="{'is-invalid': Tipo?.errors  && Tipo?.touched, 'is-valid': !Tipo?.errors  && Tipo?.touched }">
+          <div *ngIf="Tipo?.errors && Tipo?.touched">
+            <p *ngIf="Tipo?.hasError('required')" class="text-danger">
+              Ingresar tipo de skill
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boton Guardar/Agregar -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+      </div>
+    </div>
+  </form>
+</ng-template>

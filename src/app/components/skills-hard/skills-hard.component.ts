@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { SkillAddEditComponent } from 'src/app/modales/skill-add-edit/skill-add-edit.component';
 import { SkillHard } from 'src/app/model/skill-hard';
 import { SkillHardService } from 'src/app/services/skill-hard.service';
 
@@ -10,8 +11,12 @@ import { SkillHardService } from 'src/app/services/skill-hard.service';
 })
 export class SkillsHardComponent {
   skills: SkillHard[]=[];
+  loggedIn=false;
+  id: any;
 
   constructor (private skillHardService: SkillHardService){}
+//Permite tener acceso a las funciones del modal editar//
+@ViewChild(SkillAddEditComponent) editView !:SkillAddEditComponent
 
   ngOnInit(): void{
     this.cargarSkill();}
@@ -20,6 +25,9 @@ export class SkillsHardComponent {
       this.skillHardService.listSkills().subscribe(data =>{this.skills=data});
      }
 
+     addEditSkill(id:any){
+      this.editView.onGet(id);
+      }
 
      deleteSkill(id:number){
       if(confirm('¿Estas seguro que queres eliminar esta skill?')){
