@@ -15,6 +15,8 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsHardComponent } from './components/skills-hard/skills-hard.component';
 import { SkillsSoftComponent } from './components/skills-soft/skills-soft.component';
 import { LoginComponent } from './components/login/login.component';
+import { SkillAddEditComponent } from './modales/skill-add-edit/skill-add-edit.component';
+import { SkillSoftAddEditComponent } from './modales/skill-soft-add-edit/skill-soft-add-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginComponent } from './components/login/login.component';
     ProyectosComponent,
     SkillsHardComponent,
     SkillsSoftComponent,
-    LoginComponent
+    LoginComponent,
+    SkillAddEditComponent,
+    SkillSoftAddEditComponent
   ],
   imports: [
     BrowserModule,
