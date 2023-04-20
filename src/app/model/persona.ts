@@ -1,6 +1,6 @@
 export class Persona {
 
-  id!: number;
+  id: number;
   nombre: string;
   descripcion: string;
   imagen: string;

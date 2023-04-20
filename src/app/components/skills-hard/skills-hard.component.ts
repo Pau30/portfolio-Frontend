@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { SkillAddEditComponent } from 'src/app/modales/skill-add-edit/skill-add-edit.component';
 import { SkillHard } from 'src/app/model/skill-hard';
 import { SkillHardService } from 'src/app/services/skill-hard.service';
