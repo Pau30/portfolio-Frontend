@@ -1,0 +1,52 @@
+@import "@fontsource/fredoka-one";
+@import "@fontsource/roboto";
+
+
+/*Estilos generales*/
+.container-fluid {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  margin-top: 10%;
+}
+
+.col {
+  margin: 2%;
+}
+
+/*Estilos titulo "Hola soy..." */
+.titulo {
+  font-size: calc(.9rem + 4vw);
+  letter-spacing: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Fredoka One", sans-serif;
+  font-weight: 900;
+}
+
+/*Estilos nombre*/
+b {
+  color: #00EBC6;
+}
+
+#titulo {
+  color: #C91A76;
+}
+
+/*Estilo imgen*/
+.yoimg {
+  padding: 0.6%;
+  border-radius: 50%;
+  border: 10px double #ffffff;
+  min-width: 100px;
+  width: 11%;
+  height: auto;
+}
+
+/*Estilos descripcion*/
+#descrip {
+  width: 75%;
+}
+
+.parrafo {
+  font-size: calc(.5rem + .6vw);
+}
