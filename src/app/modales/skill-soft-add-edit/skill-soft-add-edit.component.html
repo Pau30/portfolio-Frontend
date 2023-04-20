@@ -1,0 +1,57 @@
+<!-- Modal -->
+<ng-template #content let-modal>
+  <form [formGroup]="formEditSoft" (ngSubmit)="onSave($event)">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="editSkillSoftModalLabel" *ngIf="!addMode">Editar SKill</h5>
+            <h5 class="modal-title" id="addSkillSoftModalLabel" *ngIf="addMode">Agregar SKill</h5>
+            <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label for="InputNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="nombre" id="EditarSoftNombre" placeholder="Ingresar nombre"
+              [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
+              <div *ngIf="Nombre?.errors && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+                  Ingresar nombre
+                </p>
+               </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="InputPorcentaje" class="form-label">Icon</label>
+
+              <input type="text" class="form-control"  formControlName="icon"  id="EditarSoftIcon" placeholder="Ingresar icon"
+              [ngClass]="{'is-invalid': Icon?.errors && Icon?.touched, 'is-valid': !Icon?.errors  && Icon?.touched }">
+              <div *ngIf="Icon?.errors  && Icon?.touched">
+                <p *ngIf="Icon?.hasError('required')" class="text-danger">
+                  El icon es requerido.
+                </p>
+              </div>
+                <br/>
+
+                <div class="mb-3">
+                  <label for="InputTipo" class="form-label">Descripcion</label>
+                  <textarea class="form-control" id="edittext" formControlName="descripcion" id="EditSoftDescripcion" placeholder="Ingresar descripcion"
+                [ngClass]="{'is-invalid': Descripcion?.errors  && Descripcion?.touched, 'is-valid': !Descripcion?.errors  && Descripcion?.touched }"></textarea>
+                  <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                    <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+                      Ingresar descripcion
+                    </p>
+                   </div>
+                </div>
+            </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+       </div>
+
+      </div>
+
+
+      </form>
+
+    </ng-template>
+
