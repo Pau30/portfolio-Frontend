@@ -17,9 +17,9 @@
     </div>
     <div class="container d-flex justify-content-end">
       <!-- Boton modal edicion -->
-      <i class="fa-solid fa-pencil m-2"></i>
+      <i class="fa-solid fa-pencil m-2" *ngIf="loggedIn"></i>
       <!--Boton eliminar -->
-      <i class="fa-solid fa-trash m-2"></i>
+      <i class="fa-solid fa-trash m-2" *ngIf="loggedIn"></i>
     </div>
   </div>
 </div>
