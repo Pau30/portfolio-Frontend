@@ -1,1 +1,43 @@
-<p>skills-soft works!</p>
+<div class="container-fluid mt-5 mb-5" id="soft">
+    <div class="titulo m-5 d-flex flex-row justify-content-between">
+      <div>
+        <h1>Soft Skills</h1>
+      </div>
+
+
+        <!-- Modal boton agregar Skill -->
+        <button type="button" class="btn text-white d-flex flex-row align-items-end" (click)="addEditSkill(id)"  *ngIf="loggedIn">
+          <i class="fa-solid fa fa-plus fa-2x m-1"></i>
+          <h5>Agregar</h5>
+        </button>
+
+      
+    </div>
+
+    <div class="container d-flex flex-wrap justify-content-around m-5" id="soft">
+      <div *ngFor="let skill of skillSoft; let i = index">
+        <div class="card" style="width: 20rem;">
+          <div class="card-header text-white d-flex flex-row justify-content-around">
+            <i class="fa-solid {{skill.icon}} fa-2x"></i>
+            <h5 class="card-title ">{{skill.nombre}}</h5>
+          </div>
+          <div class="card-body bg-dark">
+            <p class="card-text text-white">{{skill.descripcion}}</p>
+          </div>
+        </div>
+        <div class="container d-flex justify-content-center">
+          <!-- Modal boton edicion Soft Skills -->
+
+          <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)" *ngIf="loggedIn">
+          </button>
+          <!-- Boton eliminar Soft Skills -->
+          <button type="button" class="btn" (click)="deleteSkill(skill.id)" *ngIf="loggedIn">
+            <i class="fa-solid fa-trash text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-skill-soft-add-edit></app-skill-soft-add-edit>
+

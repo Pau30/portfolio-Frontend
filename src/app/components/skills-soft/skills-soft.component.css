@@ -1,0 +1,54 @@
+.titulo {
+  border-bottom: 1px solid #ffffff;
+
+}
+
+h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: calc(1rem + 3vw);
+  text-align: start;
+  color: #00EBC6;
+  -webkit-text-stroke: 1px #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  padding: 1px;
+  position: relative;
+  text-shadow: 10px 10px 25px #089b85,
+    -10px 10px 25px #089b85,
+    -10px -10px 25px #089b85,
+    10px -10px 25px #089b85;
+}
+
+h1:hover {
+  animation: comein 1.5s 1 ease-in-out forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes comein {
+  0% {
+    letter-spacing: 80px;
+    color: rgba(255, 255, 255, 0);
+  }
+
+  70% {
+    letter-spacing: 15px;
+  }
+
+  100% {
+    letter-spacing: 20px;
+    color: #00EBC6;
+  }
+}
+
+h5{
+  color: #ffffff;
+}
+
+.card-header {
+  background-color: #00EBC6;
+
+}
+
+.card-text fa {
+  font-size: calc(.6rem + .5vw);
+}
