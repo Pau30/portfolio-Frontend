@@ -5,12 +5,11 @@
       <h1>Hard Skills</h1>
     </div>
 
-    <!-- Modal boton agregar Skill -->
-    <div class="d-flex align-items-center justify-content-start">
-      <button type="button" class="btn text-white fa fa-plus fa-2x" (click)="addEditSkill(id)" *ngIf="loggedIn">
-      </button>
+     <!-- Modal boton agregar Skill -->
+     <button type="button" class="btn text-white d-flex flex-row align-items-end" (click)="addEditSkill(id)"  *ngIf="loggedIn">
+      <i class="fa-solid fa fa-plus fa-2x m-1"></i>
       <h5>Agregar</h5>
-    </div>
+    </button>
   </div>
 
   <div class="row justify-content-center">
@@ -30,8 +29,7 @@
 
             <div class="container d-flex justify-content-end">
               <!-- Modal boton edicion Frontend -->
-              <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)"
-                *ngIf="loggedIn">
+              <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)" *ngIf="loggedIn">
               </button>
               <!-- Boton eliminar Frontend -->
               <button type="button" class="btn" (click)="deleteSkill(skill.id)" *ngIf="loggedIn">
