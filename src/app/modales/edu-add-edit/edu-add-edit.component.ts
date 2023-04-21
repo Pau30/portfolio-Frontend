@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EducacionService } from 'src/app/services/educacion.service';
 
 @Component({
   selector: 'app-edu-add-edit',
