@@ -36,9 +36,9 @@ import { AboutmeAddEditComponent } from './modales/aboutme-add-edit/aboutme-add-
     LoginComponent,
     SkillAddEditComponent,
     SkillSoftAddEditComponent,
-    EduAddEditComponent,
-    ExpeAddEditComponent
-    AboutmeAddEditComponent
+    ExpeAddEditComponent,
+    AboutmeAddEditComponent,
+    EduAddEditComponent
   ],
   imports: [
     BrowserModule,
