@@ -1,0 +1,118 @@
+
+@import "@fontsource/fredoka-one";
+@import "@fontsource/roboto";
+
+
+
+/*borde blanco inferior titulo*/
+.titulo{
+  border-bottom: 1px solid #ffffff;
+
+}
+
+/*estilo titulo*/
+h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: calc(1rem + 3vw);
+  text-align: start;
+  color: #00EBC6;
+  -webkit-text-stroke: 1px #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  padding: 1px;
+  position: relative;
+  text-shadow: 10px 10px 25px #089b85,
+  -10px 10px 25px #089b85,
+  -10px -10px 25px #089b85,
+  10px -10px 25px #089b85;
+}
+
+
+
+h1:hover{
+  animation: comein 1.5s 1 ease-in-out forwards;
+  animation-iteration-count:infinite;
+}
+
+/*animacion titulo*/
+@keyframes comein {
+  0% {
+    letter-spacing: 80px;
+    color: rgba(255, 255, 255, 0);
+  }
+  70% {
+    letter-spacing: 15px;
+  }
+  100% {
+    letter-spacing: 20px;
+    color: #00EBC6;
+  }
+}
+
+h5{
+  color: #ffffff;
+}
+/* años en circulos*/
+
+.circulo{
+  padding: 2px;
+  margin:5px;
+  width: 60px;
+  background: #474646;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+ }
+
+.anios{
+  color: #e6e6e6;
+  font-size: 16px;
+}
+
+.circulo:hover{
+  background-color: #C91A76;
+  transition: all ease 0.2s;
+}
+
+.active{
+  background-color: #C91A76;
+}
+
+/*recuadro descripcion*/
+
+fieldset {
+  border:4px solid #C91A76;
+ border-radius: 10px;
+}
+
+/*titulo*/
+
+legend{
+  color: #ffffff;
+  transform: translateX(20%);
+  background-color: rgb(10, 10, 10);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: calc(0.8rem + 1vw);
+  margin-top: -25px;
+  max-width: 70%;
+  text-align: center;
+}
+
+/*descripcion*/
+p{
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(0.5rem + 0.8vw);
+  padding: 3%;
+  margin: 3%;
+ }
+
+/* imagenes descripcion*/
+
+img{
+  margin: 3%;
+  width:35%;
+  border-radius: 20%
+ }
