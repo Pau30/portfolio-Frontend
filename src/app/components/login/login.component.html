@@ -1,1 +1,48 @@
-<p>login works!</p>
+<!-- Modal -->
+<form [formGroup]="logform" (ngSubmit)="onLogin()">
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="mb-3">
+            <label for="InputNombreUsuario" class="form-label">Nombre Usuario</label>
+            <input type="text" class="form-control" formControlName="nombreUsuario" id="InputNombreUsuario"
+              placeholder="Ingresar nombre usuario"
+              [ngClass]="{'is-invalid': NombreUsuario?.errors  && NombreUsuario?.touched, 'is-valid': !NombreUsuario?.errors  && NombreUsuario?.touched }">
+            <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
+              <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">
+                El usuario es requerido
+              </p>
+
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="InputPassword" class="form-label">Password</label>
+
+            <input type="password" class="form-control" formControlName="password" id="InputPassword"
+              placeholder="Ingresar Password"
+              [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors  && Password?.touched }">
+            <div *ngIf="Password?.errors  && Password?.touched">
+              <p *ngIf="Password?.hasError('required')" class="text-danger">
+                El password es requerido.
+              </p>
+            </div>
+            <br />
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Login</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
