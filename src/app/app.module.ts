@@ -17,6 +17,8 @@ import { SkillsSoftComponent } from './components/skills-soft/skills-soft.compon
 import { LoginComponent } from './components/login/login.component';
 import { SkillAddEditComponent } from './modales/skill-add-edit/skill-add-edit.component';
 import { SkillSoftAddEditComponent } from './modales/skill-soft-add-edit/skill-soft-add-edit.component';
+import { EduAddEditComponent } from './modales/edu-add-edit/edu-add-edit.component';
+import { ExpeAddEditComponent } from './modales/expe-add-edit/expe-add-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { SkillSoftAddEditComponent } from './modales/skill-soft-add-edit/skill-s
     SkillsSoftComponent,
     LoginComponent,
     SkillAddEditComponent,
-    SkillSoftAddEditComponent
+    SkillSoftAddEditComponent,
+    EduAddEditComponent,
+    ExpeAddEditComponent
   ],
   imports: [
     BrowserModule,
