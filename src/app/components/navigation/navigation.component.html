@@ -60,6 +60,10 @@
             <i class="fa fa-github fa-2x"></i>
           </a>
 
+           <!-- Button trigger modal -->
+
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#loginModal" *ngIf="!loggedIn" >Login </button>
+        <button type="button" class="btn btn btn-light" (click)="onLogout()"  *ngIf="loggedIn" >Logout </button>
         </div>
 
       </div>
