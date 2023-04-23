@@ -1,8 +1,10 @@
-
 /*Estilo general*/
 .container-fluid {
   color: #fff;
 }
+
+
+
 
 /*Estilo titulo principal*/
 
@@ -16,38 +18,40 @@ h1 {
   letter-spacing: 15px;
   padding: 1px;
   position: relative;
-  text-shadow: 10px 10px 25px #089b85,
-    -10px 10px 25px #089b85,
-    -10px -10px 25px #089b85,
-    10px -10px 25px #089b85;
+  opacity: 0;
+  transition: 1s;
 }
 
-h1:hover {
-  animation: comein 1.5s 1 ease-in-out forwards;
-  animation-iteration-count: infinite;
+h1.fadeIn {
+  opacity: 1;
 }
 
-/*Animacion titulo principal*/
-@keyframes comein {
-  0% {
-    letter-spacing: 80px;
-    color: rgba(255, 255, 255, 0);
+/*   h4:hover {
+    animation: comein 1.5s 1 ease-in-out ;
+    animation-iteration-count: infinite;
   }
 
-  70% {
-    letter-spacing: 15px;
-  }
 
-  100% {
-    letter-spacing: 20px;
-    color: #00EBC6;
-  }
-}
+  @keyframes comein {
+    0% {
+      letter-spacing: 80px;
+      color: rgba(255, 255, 255, 0);
+    }
+
+    70% {
+      letter-spacing: 15px;
+    }
+
+    100% {
+      letter-spacing: 20px;
+      color: #00EBC6;
+    }
+  } */
 
 /*Borde inferior titulo principal*/
 
 .titulo {
-  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
 }
 
 
@@ -56,6 +60,16 @@ h4 {
   margin: 0 3%;
   font-size: calc(.8rem + .8vw);
 }
+
+.ani {
+  opacity: 0;
+  transition: 1s;
+}
+
+.ani.fadeIn {
+ opacity: 1;
+}
+
 
 .font-weight-bold {
   font-size: calc(.5rem + .5vw);
