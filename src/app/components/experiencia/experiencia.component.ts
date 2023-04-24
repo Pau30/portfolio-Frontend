@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ExpeAddEditComponent } from 'src/app/modales/expe-add-edit/expe-add-edit.component';
 import { Experiencia } from 'src/app/model/experiencia';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -15,6 +16,8 @@ experiencias: Experiencia[]=[];
 selectedItem=1;
 loggedIn=false;
 id:any;
+
+@ViewChild(ExpeAddEditComponent) editView !:ExpeAddEditComponent
 
 constructor (private experieciaService:ExperienciaService, private tokenService:TokenService) {}
 
@@ -36,8 +39,8 @@ cargarExperiencia(): void{
   this.selectedItem = id;
  }
 
- addEditExperiecia(id:any){
-
+ addEditExperiencia(id:any){
+  this.editView.onGet(id);
  }
 
   deleteExperiencia(id:number){

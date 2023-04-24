@@ -1,12 +1,13 @@
-.container-fluid{
-  color: #ffffff;
-}
 
+@import "@fontsource/fredoka-one";
+@import "@fontsource/roboto";
+
+/*borde blanco inferior titulo*/
 .titulo{
   border-bottom: 1px solid #ffffff;
-
 }
 
+/*estilo titulo*/
 h1 {
   font-family: "Fredoka One", sans-serif;
   font-size: calc(1rem + 3vw);
@@ -28,6 +29,7 @@ h1:hover{
   animation-iteration-count:infinite;
 }
 
+/*animacion titulo*/
 @keyframes comein {
   0% {
     letter-spacing: 80px;
@@ -42,70 +44,71 @@ h1:hover{
   }
 }
 
-.contenedor{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h5{
+  color: #ffffff;
+}
+/* años en circulos*/
 
-  margin-top: 5%;
+.circulo{
+  padding: 2px;
+  margin:5px;
+  width: 110px;
+  background: #474646;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all ease 0.2s;
 }
 
-li{
- cursor: pointer;
- transition: 0.3s;
+.nombre{
+  color: #e6e6e6;
+  font-size: 16px;
 }
 
-.nav{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: none;
-  flex-direction: column;
+.circulo:hover{
+  background-color: #C91A76;
+  transition: all ease 0.2s;
 }
 
-
-.nav-link{
-  color: #fff;
-  font-weight: 400;
+.active{
+  background-color: #C91A76;
 }
 
-.nav-link.active{
-color:#C91A76;
-font-weight: 800;
+/*recuadro descripcion*/
+
+fieldset {
+  border:4px solid #C91A76;
+ border-radius: 10px;
 }
 
-.nav-link:hover {
-  background-color: #fff;
-  color: #C91A76;
-  font-weight: 800;
-}
+/*titulo*/
 
-.tab-content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.tab-pane{
- color: #ffffff;
- border: 5px solid #C91A76;
- border-radius: 20px;
+legend{
+  color: #ffffff;
+  background-color: rgb(10, 10, 10);
+  text-align: start;
+  text-transform: uppercase;
+  font-size: calc(0.8rem + 1vw);
+  margin-top: -3%;
+  margin-left: 5%;
+  padding: 0 2%;
+  width: auto;
 
 }
 
-
-h6{
-  margin-top: 2%;
-  padding:1%
-}
-
+/*descripcion*/
 p{
-  margin: 1%;
-}
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(0.5rem + 0.8vw);
+  padding: 3%;
+  margin: 3%;
+ }
 
-.duracion{
-  font-style: italic;
-  font-size: 14px;
-  padding-bottom: 2%;
-}
+/* imagenes descripcion*/
+
+img{
+  margin: 3%;
+  width:100%;
+  border-radius: 20%
+ }
