@@ -10,43 +10,44 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
- //traer datos distintos datos del array
- edu: Educacion[]=[];
- selectedItem=1;
- loggedIn=false;
- id:any;
+  //traer datos distintos datos del array
+  edu: Educacion[] = [];
+  selectedItem = 1;
+  loggedIn = false;
+  id: any;
 
- @ViewChild(EduAddEditComponent) editView !:EduAddEditComponent
+  @ViewChild(EduAddEditComponent) editView !: EduAddEditComponent
 
- constructor (private educacionService:EducacionService, private tokenService:TokenService) {}
+  constructor(private educacionService: EducacionService, private tokenService: TokenService) { }
 
- ngOnInit(): void{
+  ngOnInit(): void {
 
- this.cargarEducacion();
- if (this.tokenService.getToken()) {
-  this.loggedIn = true;
-} else {
-  this.loggedIn=false;
-}
+    this.cargarEducacion();
+    if (this.tokenService.getToken()) {
+      this.loggedIn = true;
+    } else {
+      this.loggedIn = false;
+    }
 
-}
-cargarEducacion(): void{
-  this.educacionService.listEducacion().subscribe(data =>{this.edu=data});
- }
-
- seleccionado(id){
-  this.selectedItem = id;
- }
-
- addEditEducacion(id:any){
-  this.editView.onGet(id);
+  }
+  cargarEducacion(): void {
+    this.educacionService.listEducacion().subscribe(data => { this.edu = data });
   }
 
-  deleteEducacion(id:number){
-   if(confirm('¿Estas seguro que queres eliminar este estudio?')){
-     this.educacionService.eliminarEducacion(id).subscribe(data =>{
-       this.cargarEducacion();})
-   }
+  seleccionado(id) {
+    this.selectedItem = id;
+  }
+
+  addEditEducacion(id: any) {
+    this.editView.onGet(id);
+  }
+
+  deleteEducacion(id: number) {
+    if (confirm('¿Estas seguro que queres eliminar este estudio?')) {
+      this.educacionService.eliminarEducacion(id).subscribe(data => {
+        this.cargarEducacion();
+      })
+    }
   }
 
 }
