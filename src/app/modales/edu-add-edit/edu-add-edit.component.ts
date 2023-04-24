@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 import { EducacionService } from 'src/app/services/educacion.service';
 
 @Component({
@@ -23,6 +24,8 @@ export class EduAddEditComponent {
     fin: new FormControl(null, Validators.compose([Validators.required])),
     descripcion: new FormControl('', Validators.compose([Validators.required])),
   });
+
+
 
   @ViewChild('content') editview!: ElementRef;
 
@@ -65,11 +68,11 @@ export class EduAddEditComponent {
         console.log("paso 2");
         this.formAddEditEdu.setValue({
           id: this.traerData.id,
-       nombre: this.traerData.nombre,
-       inicio: this.traerData.inicio,
-       fin: this.traerData.fin,
-       descripcion: this.traerData.descripcion,
-       logo: ''
+          nombre: this.traerData.nombre,
+          inicio: this.traerData.inicio,
+          fin: this.traerData.fin,
+          descripcion: this.traerData.descripcion,
+          logo: this.traerData.logo,
         });
       }
       )
@@ -83,7 +86,7 @@ export class EduAddEditComponent {
       );
   }
 
- onSave(event: Event) {
+  onSave(event: Event) {
     //evita que se ejecute el submit
     event.preventDefault;
     if (this.formAddEditEdu.valid) {
@@ -104,4 +107,5 @@ export class EduAddEditComponent {
     }
   }
 
+  
 }
