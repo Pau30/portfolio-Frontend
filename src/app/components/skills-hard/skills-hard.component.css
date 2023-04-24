@@ -26,41 +26,7 @@ h1.fadeIn {
   opacity: 1;
 }
 
-/*   h4:hover {
-    animation: comein 1.5s 1 ease-in-out ;
-    animation-iteration-count: infinite;
-  }
-
-
-  @keyframes comein {
-    0% {
-      letter-spacing: 80px;
-      color: rgba(255, 255, 255, 0);
-    }
-
-    70% {
-      letter-spacing: 15px;
-    }
-
-    100% {
-      letter-spacing: 20px;
-      color: #00EBC6;
-    }
-  } */
-
-/*Borde inferior titulo principal*/
-
-.titulo {
-  border-top: 1px solid #ffffff;
-}
-
-
-h4 {
-  text-align: center;
-  margin: 0 3%;
-  font-size: calc(.8rem + .8vw);
-}
-
+/*Estilos para efecto FadeIn*/
 .ani {
   opacity: 0;
   transition: 1s;
@@ -71,12 +37,25 @@ h4 {
 }
 
 
+/*Borde inferior titulo principal*/
+
+.titulo {
+  border-top: 1px solid #ffffff;
+}
+
+/*Estilos Subtitulos*/
+h4 {
+  text-align: center;
+  margin: 0 3%;
+  font-size: calc(.8rem + .8vw);
+}
+
+/*Tamaño letra nombre skill*/
 .font-weight-bold {
   font-size: calc(.5rem + .5vw);
 }
 
 /* Estilos degrade de las barras de progreso de las skills*/
-
 .html {
   background: linear-gradient(to left, #00C9FF 0%, #92FE9D 100%);
 }

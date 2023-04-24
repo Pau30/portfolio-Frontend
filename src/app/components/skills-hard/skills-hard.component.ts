@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, OnInit, ElementRef, AfterViewInit, ViewChildren } from '@angular/core';
 import { SkillAddEditComponent } from 'src/app/modales/skill-add-edit/skill-add-edit.component';
 import { SkillHard } from 'src/app/model/skill-hard';
 import { SkillHardService } from 'src/app/services/skill-hard.service';
@@ -48,7 +48,7 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const threshold = 0.5;
+    const threshold =0.9;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -67,7 +67,7 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
     observer.observe(this.hardskill1.nativeElement);
     observer.observe(this.hardskill2.nativeElement);
     observer.observe(this.hardskill3.nativeElement);
-  
+
 
   }
   @ViewChild('hardskill') hardskill!: ElementRef;
