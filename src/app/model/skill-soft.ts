@@ -2,12 +2,12 @@ export class SkillSoft {
   id:number;
   nombre: string;
   descripcion:string;
-  icon: string
+  imagen: string
 
 
-    constructor(nombre: string, descripcion:string, icon:string) {
+    constructor(nombre: string, descripcion:string, imagen:string) {
      this.nombre = nombre;
      this.descripcion = descripcion;
-     this.icon= icon;
+     this.imagen= imagen;
 }
 }

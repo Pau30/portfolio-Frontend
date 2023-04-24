@@ -20,7 +20,7 @@ export class SkillSoftAddEditComponent {
   public formEditSoft = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl<string>('', Validators.compose([Validators.required])),
-    icon: new FormControl('', Validators.compose([Validators.required])),
+    imagen: new FormControl('', Validators.compose([Validators.required])),
     descripcion: new FormControl('', Validators.compose([Validators.required])),
   });
 
@@ -60,7 +60,7 @@ export class SkillSoftAddEditComponent {
         this.formEditSoft.setValue({
           id: this.traerData.id,
           nombre: this.traerData.nombre,
-          icon: this.traerData.icon,
+          imagen: this.traerData.imagen,
           descripcion: this.traerData.descripcion,
         });
       }
