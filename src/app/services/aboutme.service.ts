@@ -18,22 +18,22 @@ export class AboutmeService {
 
 //Metodos de la clase Persona
   public listPersona(): Observable<Persona>{
-    return this.httpClient.get<Persona>(this.url + 'lista');
+    return this.httpClient.get<Persona>(this.url + 'list');
   }
 
   public verPersona(id:number): Observable<Persona>{
-    return this.httpClient.get<Persona>(this.url + `ver/${id}`);
+    return this.httpClient.get<Persona>(this.url + `search/${id}`);
   }
 
   public agregarPersona(persona: Persona): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'crear', persona );
+    return this.httpClient.post<any>(this.url + 'add', persona );
   }
 
   public eliminarPersona(id:number): Observable<any>{
-    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
+    return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
 
   public updatePersona(persona: Persona): Observable<any>{
-    return this.httpClient.put<any>(this.url + 'editar', persona);
+    return this.httpClient.put<any>(this.url + 'edit', persona);
   }
 }

@@ -14,22 +14,22 @@ export class SkillSoftService {
 constructor(private httpClient:HttpClient) { }
 
 public listSkills(): Observable<SkillSoft[]>{
-  return this.httpClient.get<SkillSoft[]>(this.url + 'lista');
+  return this.httpClient.get<SkillSoft[]>(this.url + 'list');
 }
 
 public verSkills(id:number): Observable<SkillSoft>{
-  return this.httpClient.get<SkillSoft>(this.url + `ver/${id}`);
+  return this.httpClient.get<SkillSoft>(this.url + `search/${id}`);
 }
 
 public agregarSkills(skillSoft: SkillSoft): Observable<any>{
-  return this.httpClient.post<any>(this.url + 'crear', skillSoft );
+  return this.httpClient.post<any>(this.url + 'add', skillSoft );
 }
 
 public eliminarSkills(id:number): Observable<any>{
-  return this.httpClient.delete<any>(this.url + `borrar/${id}`);
+  return this.httpClient.delete<any>(this.url + `delete/${id}`);
 }
 
 public updateSkills(skillSoft:SkillSoft): Observable<any>{
-  return this.httpClient.put<any>(this.url + 'editar', skillSoft);
+  return this.httpClient.put<any>(this.url + 'edit', skillSoft);
 }
 }

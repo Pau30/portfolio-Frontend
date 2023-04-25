@@ -12,22 +12,22 @@ export class SkillHardService {
   constructor(private httpClient:HttpClient) { }
 
   public listSkills(): Observable<SkillHard[]>{
-    return this.httpClient.get<SkillHard[]>(this.url + 'lista');
+    return this.httpClient.get<SkillHard[]>(this.url + 'list');
   }
 
   public verSkills(id:number): Observable<SkillHard>{
-    return this.httpClient.get<SkillHard>(this.url + `ver/${id}`);
+    return this.httpClient.get<SkillHard>(this.url + `search/${id}`);
   }
 
   public agregarSkills(skill: SkillHard): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'crear', skill );
+    return this.httpClient.post<any>(this.url + 'add', skill );
   }
 
   public eliminarSkills(id:number): Observable<any>{
-    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
+    return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
 
   public updateSkills(skill:SkillHard): Observable<any>{
-    return this.httpClient.put<any>(this.url + 'editar', skill);
+    return this.httpClient.put<any>(this.url + 'edit', skill);
   }
 }

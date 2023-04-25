@@ -13,22 +13,22 @@ export class ExperienciaService {
   constructor(private httpClient:HttpClient) { }
 
   public listExperiencia(): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.url + 'lista');
+    return this.httpClient.get<Experiencia[]>(this.url + 'list');
   }
 
   public verExperiencia(id:number): Observable<Experiencia>{
-    return this.httpClient.get<Experiencia>(this.url + `ver/${id}`);
+    return this.httpClient.get<Experiencia>(this.url + `search/${id}`);
   }
 
   public agregarExperiencia(experiencia: Experiencia): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'crear', experiencia );
+    return this.httpClient.post<any>(this.url + 'add', experiencia );
   }
 
   public eliminarExperiencia(id:number): Observable<any>{
-    return this.httpClient.delete<any>(this.url + `borrar/${id}`);
+    return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
 
   public updateExperiencia(experiencia:Experiencia): Observable<any>{
-    return this.httpClient.put<any>(this.url + 'editar', experiencia);
+    return this.httpClient.put<any>(this.url + 'edit', experiencia);
   }
 }
