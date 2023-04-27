@@ -36,8 +36,8 @@ export class SkillSoftAddEditComponent {
     return this.formEditSoft.get('nombre');
   }
 
-  get Icon() {
-    return this.formEditSoft.get('icon');
+  get Imagen() {
+    return this.formEditSoft.get('imagen');
   }
 
   get Descripcion() {

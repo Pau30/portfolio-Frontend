@@ -1,19 +1,19 @@
-<div class="container-fluid mt-5 mb-5" id="soft">
+<div class="container-fluid mt-5 mb-5">
   <div class="titulo m-5 d-flex flex-row justify-content-between">
     <div>
-      <h1>Soft Skills</h1>
+      <h1 #softskill id="soft">Soft Skills</h1>
     </div>
     <!-- Modal boton agregar Skill -->
-    <button type="button" class="btn text-white d-flex flex-row align-items-end" (click)="addEditSkill(id)"
+    <button #softskill2 type="button" class="btn text-white d-flex flex-row align-items-end ani" (click)="addEditSkill(id)"
       *ngIf="loggedIn">
-      <i class="fa-solid fa fa-plus fa-2x m-1"></i>
-      <h5>Agregar</h5>
+      <i class="fa-solid fa fa-plus m-1"></i>
+      <span>Agregar</span>
     </button>
   </div>
 
-  <div class="col-12 d-flex flex-wrap justify-content-evenly m-5" id="soft">
+  <div #softskill1 class="col-12 d-flex flex-wrap justify-content-evenly align-items-center mt-5 mb-5 ani" id="soft">
     <div *ngFor="let skill of skillSoft; let i = index">
-      <div class="card m-2" style="width: 20rem;">
+      <div class="card mt-2 mb-2" style="width: 20rem;">
         <img [src]="skill.imagen" class="card-img-top" alt="skill">
         <div class="card-body ">
           <h5 class="card-title ">{{skill.nombre}}</h5>

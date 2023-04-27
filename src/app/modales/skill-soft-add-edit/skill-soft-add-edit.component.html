@@ -21,13 +21,14 @@
             </div>
 
             <div class="mb-3">
-              <label for="InputPorcentaje" class="form-label">Icon</label>
-
-              <input type="text" class="form-control"  formControlName="icon"  id="EditarSoftIcon" placeholder="Ingresar icon"
-              [ngClass]="{'is-invalid': Icon?.errors && Icon?.touched, 'is-valid': !Icon?.errors  && Icon?.touched }">
-              <div *ngIf="Icon?.errors  && Icon?.touched">
-                <p *ngIf="Icon?.hasError('required')" class="text-danger">
-                  El icon es requerido.
+              <label for="InputImangenSkill" class="form-label">Imagen</label>
+              <input *ngIf="addMode" type="file" class="form-control" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg" formControlName="imagen"  id="EditarSoftImagen" placeholder="Ingresar imagen"
+              [ngClass]="{'is-invalid': Imagen?.errors && Imagen?.touched, 'is-valid': !Imagen?.errors  && Imagen?.touched }">
+              <input *ngIf="!addMode" type="text" class="form-control"  formControlName="imagen"  id="EditarSoftImagen" placeholder="Ingresar imagen"
+              [ngClass]="{'is-invalid': Imagen?.errors && Imagen?.touched, 'is-valid': !Imagen?.errors  && Imagen?.touched }">
+              <div *ngIf="Imagen?.errors  && Imagen?.touched">
+                <p *ngIf="Imagen?.hasError('required')" class="text-danger">
+                  La imagen es requerida.
                 </p>
               </div>
                 <br/>
