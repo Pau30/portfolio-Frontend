@@ -1,14 +1,14 @@
-<div class="container-fluid mt-5 mb-5" id="hard" >
+<div class="container-fluid mt-5 mb-5">
 
   <div class="titulo m-5 d-flex flex-row justify-content-between">
     <div>
-      <h1 #hardskill>Hard Skills</h1>
+      <h1 #hardskill id="hard">Hard Skills</h1>
     </div>
 
      <!-- Modal boton agregar Skill -->
-     <button type="button" class="btn text-white d-flex flex-row align-items-end" (click)="addEditSkill(id)"  *ngIf="loggedIn">
-      <i class="fa-solid fa fa-plus fa-2x m-1"></i>
-      <h5>Agregar</h5>
+     <button #hardskill4 type="button" class="btn text-white d-flex flex-row align-items-end ani" (click)="addEditSkill(id)"  *ngIf="loggedIn">
+      <i class="fa-solid fa fa-plus fa m-1"></i>
+      <span>Agregar</span>
     </button>
   </div>
 
@@ -17,16 +17,15 @@
       <!-- Subtitulo -->
       <div class="container d-flex flex-row justify-content-center mt-4" >
         <i class="fa-solid fa-laptop-code fa-2x text-white"></i>
-        <h4>Frontend</h4>
+        <h4 class="text-white">Frontend</h4>
       </div>
       <!-- Listado Frontend Skills -->
       <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo">
         <div class="container m-3"  *ngSwitchCase="'Frontend'" >
           <div class="container d-flex flex-row" >
             <div class="container d-flex align-items-end">
-              <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              <h5 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h5>
             </div>
-
             <div class="container d-flex justify-content-end">
               <!-- Modal boton edicion Frontend -->
               <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)" *ngIf="loggedIn">
@@ -37,7 +36,6 @@
               </button>
             </div>
           </div>
-
           <!-- Progress bar Frontend -->
           <div class="progress">
             <div class="progress-bar" role="progressbar" [style.width.%]="skill.porcentaje" aria-valuenow="0"
@@ -47,30 +45,23 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
-
-
-
 
     <div class="col-lg-5 col-md-10 ani" #hardskill2>
       <div class="container d-flex align-items-center justify-content-center mt-4">
         <i class="fa-solid fa-laptop-code fa-2x text-white"></i>
-        <h4>Backend</h4>
-
+        <h4 class="text-white">Backend</h4>
       </div>
 
       <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo" >
         <div class="container m-3" *ngSwitchCase="'Backend'" >
           <div class="container d-flex flex-row">
             <div class="container d-flex align-items-end">
-              <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              <h5 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h5>
             </div>
-
             <div class="container d-flex justify-content-end">
               <!-- Modal boton edicion Backend -->
-
               <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)"
                 *ngIf="loggedIn">
               </button>
@@ -87,25 +78,22 @@
             </div>
           </div>
         </div>
-
       </div>
 
 
       <div class="container d-flex align-items-center justify-content-center mt-4 ani" #hardskill3>
         <i class="fa-solid fa-language fa-2x text-white"></i>
-        <h4>Idiomas</h4>
+        <h4 class="text-white">Idiomas</h4>
       </div>
 
       <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo" >
         <div class="container m-3" *ngSwitchCase="'Idioma'">
           <div class="container d-flex flex-row">
             <div class="container d-flex align-items-end">
-              <h5 class="font-weight-bold text-uppercase">{{skill.nombre}}</h5>
+              <h5 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h5>
             </div>
-
             <div class="container d-flex justify-content-end">
               <!-- Modal boton edicion Idioma -->
-
               <button type="button" class="btn text-white fa fa-pencil" (click)="addEditSkill(skill.id)"
                 *ngIf="loggedIn">
               </button>

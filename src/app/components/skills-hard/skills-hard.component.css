@@ -1,12 +1,5 @@
-/*Estilo general*/
-.container-fluid {
-  color: #fff;
-}
 
-
-
-
-/*Estilo titulo principal*/
+/*Estilo titulo principal y animacion*/
 
 h1 {
   font-family: "Fredoka One", sans-serif;
@@ -17,30 +10,39 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 15px;
   padding: 1px;
-  position: relative;
   opacity: 0;
-  transition: 1s;
+  transition: 2s;
+  transform: scale(0);
 }
 
 h1.fadeIn {
   opacity: 1;
+  transform: scale(1);
+}
+
+/*Estilos Agregar*/
+span{
+  font-size: calc(.8rem + .6vw);
+  color: #ffffff;
 }
 
 /*Estilos para efecto FadeIn*/
 .ani {
   opacity: 0;
   transition: 1s;
+  transform:translateY(-100px);
 }
 
 .ani.fadeIn {
  opacity: 1;
+ transform:translateY(0px);
 }
 
 
 /*Borde inferior titulo principal*/
 
 .titulo {
-  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 /*Estilos Subtitulos*/
@@ -95,3 +97,11 @@ h4 {
 .japones {
   background: linear-gradient(to left, #BB377D 0%, #FBD3E9 100%);
 }
+
+@media (max-width: 767.98px) {
+  h1 {
+    letter-spacing: 7px;
+  }
+}
+
+
