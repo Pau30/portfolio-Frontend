@@ -22,6 +22,30 @@
       </div>
 
       <div class="mb-3">
+        <label for="InputNombreCortoEdu" class="form-label">Nombre Corto</label>
+        <input type="text" class="form-control" formControlName="nombreCorto" id="EditNombreCortoEdu"
+          placeholder="Ingresar nombre corto"
+          [ngClass]="{'is-invalid': NombreCorto?.errors  && NombreCorto?.touched, 'is-valid': !NombreCorto?.errors  && NombreCorto?.touched }">
+        <div *ngIf="NombreCorto?.errors && NombreCorto?.touched">
+          <p *ngIf="NombreCorto?.hasError('required')" class="text-danger">
+            Ingresar nombre corto
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="InputTituloEdu" class="form-label">Título</label>
+        <input type="text" class="form-control" formControlName="titulo" id="EditTituloEdu"
+          placeholder="Ingresar título"
+          [ngClass]="{'is-invalid': Titulo?.errors  && Titulo?.touched, 'is-valid': !Titulo?.errors  && Titulo?.touched }">
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+            Ingresar título
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
         <label for="InputLogoEdu" class="form-label">Logo</label>
         <input type="file" *ngIf="addMode" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg"
           class="custom-file-input form-control" formControlName="logo" id="EditLogoEdu"

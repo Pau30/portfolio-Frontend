@@ -19,6 +19,8 @@ export class EduAddEditComponent {
   public formAddEditEdu = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl('', Validators.compose([Validators.required])),
+    nombreCorto: new FormControl('', Validators.compose([Validators.required])),
+    titulo: new FormControl('', Validators.compose([Validators.required])),
     logo: new FormControl('', Validators.compose([Validators.required])),
     inicio: new FormControl(null, Validators.compose([Validators.required])),
     fin: new FormControl(null, Validators.compose([Validators.required])),
@@ -37,6 +39,14 @@ export class EduAddEditComponent {
 
   get Nombre() {
     return this.formAddEditEdu.get('nombre');
+  }
+
+  get NombreCorto() {
+    return this.formAddEditEdu.get('nombreCorto');
+  }
+
+  get Titulo() {
+    return this.formAddEditEdu.get('titulo');
   }
 
   get Logo() {
@@ -69,6 +79,8 @@ export class EduAddEditComponent {
         this.formAddEditEdu.setValue({
           id: this.traerData.id,
           nombre: this.traerData.nombre,
+          nombreCorto: this.traerData.nombreCorto,
+          titulo: this.traerData.titulo,
           inicio: this.traerData.inicio,
           fin: this.traerData.fin,
           descripcion: this.traerData.descripcion,
@@ -107,5 +119,5 @@ export class EduAddEditComponent {
     }
   }
 
-  
+
 }
