@@ -44,7 +44,7 @@
           [ngClass]="{'is-invalid': Logo?.errors  && Logo?.touched, 'is-valid': !Logo?.errors  && Logo?.touched }">
         <div *ngIf="Logo?.errors && Logo?.touched">
           <p *ngIf="Logo?.hasError('required')" class="text-danger">
-            Archivo
+            El logo es requerido
           </p>
         </div>
       </div>

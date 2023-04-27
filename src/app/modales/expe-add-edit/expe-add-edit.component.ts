@@ -22,6 +22,7 @@ export class ExpeAddEditComponent {
     inicio: new FormControl('', Validators.compose([Validators.required])),
     fin: new FormControl('', Validators.compose([Validators.required])),
     descripcion: new FormControl('', Validators.compose([Validators.required])),
+   
   });
 
   @ViewChild('content') editview!: ElementRef;
@@ -72,7 +73,9 @@ export class ExpeAddEditComponent {
           inicio: this.traerData.inicio,
           fin: this.traerData.fin,
           descripcion: this.traerData.descripcion,
-          logo: this.traerData.logo
+          logo: this.traerData.logo,
+
+
         });
       }
       )

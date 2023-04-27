@@ -1,13 +1,7 @@
-
 @import "@fontsource/fredoka-one";
 @import "@fontsource/roboto";
 
-/*borde blanco inferior titulo*/
-.titulo{
-  border-bottom: 1px solid #ffffff;
-}
-
-/*estilo titulo*/
+/*Estilo titulo principal y animacion*/
 h1 {
   font-family: "Fredoka One", sans-serif;
   font-size: calc(1rem + 3vw);
@@ -17,98 +11,149 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 15px;
   padding: 1px;
-  position: relative;
-  text-shadow: 10px 10px 25px #089b85,
-  -10px 10px 25px #089b85,
-  -10px -10px 25px #089b85,
-  10px -10px 25px #089b85;
+  opacity: 0;
+  transition: 2s;
+  transform: scale(0)
 }
 
-h1:hover{
-  animation: comein 1.5s 1 ease-in-out forwards;
-  animation-iteration-count:infinite;
+h1.fadeIn {
+  opacity: 1;
+  transform: scale(1)
 }
 
-/*animacion titulo*/
-@keyframes comein {
-  0% {
-    letter-spacing: 80px;
-    color: rgba(255, 255, 255, 0);
-  }
-  70% {
-    letter-spacing: 15px;
-  }
-  100% {
-    letter-spacing: 20px;
-    color: #00EBC6;
-  }
+/*Estilos para efecto FadeIn*/
+.ani {
+  opacity: 0;
+  transition: 1s;
+  transform: translateY(-100px);
 }
 
-h5{
+.ani.fadeIn {
+ opacity: 1;
+ transform: translateY(0);
+}
+
+/*Borde blanco inferior titulo*/
+.titulo {
+  border-bottom: 1px solid #ffffff;
+}
+
+/*Estilos Agregar*/
+span{
+  font-size: calc(.8rem + .6vw);
   color: #ffffff;
 }
-/* años en circulos*/
 
-.circulo{
-  padding: 2px;
-  margin:5px;
-  width: 110px;
+
+/*Rectangulos con nombre de empresa*/
+
+.circulo {
+  margin: 2%;
+  width: 130px;
   background: #474646;
   border: 3px solid #ffffff;
   border-radius: 15px;
   cursor: pointer;
   transition: all ease 0.2s;
+
 }
 
-.nombre{
-  color: #e6e6e6;
-  font-size: 16px;
-}
-
-.circulo:hover{
+.circulo:hover {
   background-color: #C91A76;
   transition: all ease 0.2s;
 }
 
-.active{
+.active {
   background-color: #C91A76;
 }
 
-/*recuadro descripcion*/
-
-fieldset {
-  border:4px solid #C91A76;
- border-radius: 10px;
+#botones {
+  flex-direction: column;
 }
 
-/*titulo*/
+/*Estilo nombre empresa dentro del circulo*/
 
-legend{
-  color: #ffffff;
-  background-color: rgb(10, 10, 10);
-  text-align: start;
-  text-transform: uppercase;
-  font-size: calc(0.8rem + 1vw);
-  margin-top: -3%;
-  margin-left: 5%;
-  padding: 0 2%;
-  width: auto;
-
-}
-
-/*descripcion*/
-p{
-  color: #ffffff;
+.nombre {
+  color: #e6e6e6;
   font-family: "Roboto", sans-serif;
   font-size: calc(0.5rem + 0.8vw);
   padding: 3%;
   margin: 3%;
- }
+}
 
-/* imagenes descripcion*/
+/*Estilo nombre del puesto*/
 
-img{
+#puesto {
+  font-family: "Fredoka One", sans-serif;
+  letter-spacing: 3px;
+  background-color: rgb(10, 10, 10);
+  text-align: start;
+  text-transform: uppercase;
+  font-size: calc(0.8rem + 1vw);
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 0;
+}
+
+/*Estilo nombre de la empresa detras del puesto*/
+
+#subEmpresa {
+  color: #a7055b;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: calc(0.8rem + 1vw);
+}
+
+/*Estilo periodo en el puesto*/
+
+#periodo {
+  font-size: calc(0.7rem + 0.5vw);
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+
+
+/*Logo empresa*/
+
+img {
   margin: 3%;
-  width:100%;
-  border-radius: 20%
- }
+  width: 30%;
+  border-radius: 5%
+}
+
+/*Cambios de estilo segun tamaño de pantalla*/
+
+@media (max-width: 991.98px) {
+  #botones {
+    flex-direction: row;
+  }
+
+  img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    letter-spacing: 7px;
+  }
+
+  .circulo {
+    width: 100px;
+  }
+
+  #botones {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+
+}
+
+@media (max-width: 576px) {
+
+  img {
+    width: 50%;
+  }
+
+}
