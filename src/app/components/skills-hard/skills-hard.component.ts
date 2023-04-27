@@ -18,16 +18,13 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
   id: any;
 
   constructor(private skillHardService: SkillHardService, private tokenService: TokenService, private el: ElementRef) { }
-  //Permite tener acceso a las funciones del modal editar//
+  //Permite tener acceso a las funciones del modal editar
   @ViewChild(SkillAddEditComponent) editView !: SkillAddEditComponent
 
-
+  //Lo que se carga cuando se carga la pagina
   ngOnInit(): void {
     this.cargarSkill();
-  }
-
-  cargarSkill(): void {
-    this.skillHardService.listSkills().subscribe(data => { this.skills = data });
+    //Booleano que oculta los botones de edicion, etc si el usuario no esta loggedIn
     if (this.tokenService.getToken()) {
       this.loggedIn = true;
     } else {
@@ -35,10 +32,17 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
     }
   }
 
+  //Metodo para cargar las skills
+  cargarSkill(): void {
+    this.skillHardService.listSkills().subscribe(data => { this.skills = data });
+  }
+
+  //Metodo para editar o agregar
   addEditSkill(id: any) {
     this.editView.onGet(id);
   }
 
+  //Metodo para borrar
   deleteSkill(id: number) {
     if (confirm('¿Estas seguro que queres eliminar esta skill?')) {
       this.skillHardService.eliminarSkills(id).subscribe(data => {
@@ -47,8 +51,9 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
     }
   }
 
+  //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
   ngAfterViewInit() {
-    const threshold =0.9;
+    const threshold = 0.5;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -67,12 +72,12 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
     observer.observe(this.hardskill1.nativeElement);
     observer.observe(this.hardskill2.nativeElement);
     observer.observe(this.hardskill3.nativeElement);
-
-
+    observer.observe(this.hardskill4.nativeElement);
   }
   @ViewChild('hardskill') hardskill!: ElementRef;
   @ViewChild('hardskill1') hardskill1!: ElementRef;
   @ViewChild('hardskill2') hardskill2!: ElementRef;
   @ViewChild('hardskill3') hardskill3!: ElementRef;
+  @ViewChild('hardskill4') hardskill4!: ElementRef;
 
 }
