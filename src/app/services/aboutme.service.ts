@@ -11,7 +11,7 @@ export class AboutmeService {
 
   //URL del backend
 
-  url= 'http://localhost:8080/persona/';
+  url= 'http://localhost:8080/aboutme/';
 
   //Servicio para comunicarse con el backend
   constructor(private httpClient:HttpClient) { }
@@ -23,10 +23,6 @@ export class AboutmeService {
 
   public verPersona(id:number): Observable<Persona>{
     return this.httpClient.get<Persona>(this.url + `search/${id}`);
-  }
-
-  public agregarPersona(persona: Persona): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'add', persona );
   }
 
   public eliminarPersona(id:number): Observable<any>{

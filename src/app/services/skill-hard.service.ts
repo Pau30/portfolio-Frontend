@@ -7,7 +7,7 @@ import { SkillHard } from 'src/app/model/skill-hard';
   providedIn: 'root'
 })
 export class SkillHardService {
-  url= 'http://localhost:8080/skill/';
+  url= 'http://localhost:8080/hardSkills/';
 
   constructor(private httpClient:HttpClient) { }
 
