@@ -16,7 +16,8 @@ export class EduAddEditComponent {
   addMode = true;
   id: any;
 
-  public formAddEditEdu = new FormGroup({
+  //Armado del Formgroup
+  formAddEditEdu = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl('', Validators.compose([Validators.required])),
     nombreCorto: new FormControl('', Validators.compose([Validators.required])),
@@ -28,15 +29,13 @@ export class EduAddEditComponent {
   });
 
 
-
+  //Da acceso al mismo elemento
   @ViewChild('content') editview!: ElementRef;
 
-  //Constructor
   constructor(
-    private modalService: NgbModal,
-    private educacionService: EducacionService
-  ) { }
+    private modalService: NgbModal, private educacionService: EducacionService) { }
 
+  //Metodos para tomar datos
   get Nombre() {
     return this.formAddEditEdu.get('nombre');
   }
@@ -64,7 +63,7 @@ export class EduAddEditComponent {
   get Descripcion() {
     return this.formAddEditEdu.get('descripcion');
   }
-
+  //Metodo para traer datos al modal
   onGet(id: any) {
     this.id = this.educacionService.verEducacion(id);
     if (id === undefined) {
@@ -91,15 +90,15 @@ export class EduAddEditComponent {
     };
     this.abrir();
   }
-
+  //Metodo para abrir el modal
   abrir() {
     this.modalService.open(this.editview)
       .result.then((result) => { }, (reason) => { }
       );
   }
 
+  //Metodo para guardar los cambios o avisar si hay error
   onSave(event: Event) {
-    //evita que se ejecute el submit
     event.preventDefault;
     if (this.formAddEditEdu.valid) {
       this.educacionService.updateEducacion(this.formAddEditEdu.getRawValue()).subscribe(data => {

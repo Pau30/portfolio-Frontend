@@ -1,14 +1,14 @@
 <!-- Modal -->
 <ng-template #content let-modal>
   <form [formGroup]="formAddEditExpe" (ngSubmit)="onSave($event)">
-
+    <!-- Titulo -->
     <div class="modal-header">
       <h5 class="modal-title" id="EditExpeModalLabel" *ngIf="!addMode">Editar experiencia</h5>
       <h5 class="modal-title" id="addExpeModalLabel" *ngIf="addMode">Agregar experiencia</h5>
       <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
-
+      <!-- Input Nombre -->
       <div class="mb-3">
         <label for="InputNombreExpe" class="form-label">Empresa</label>
         <input type="text" class="form-control" formControlName="nombre" id="EditNombreExpe"
@@ -20,7 +20,7 @@
           </p>
         </div>
       </div>
-
+      <!-- Input Puesto -->
       <div class="mb-3">
         <label for="InputPuestoExpe" class="form-label">Puesto</label>
         <input type="text" class="form-control" formControlName="puesto" id="EditPuestoExpe"
@@ -32,7 +32,7 @@
           </p>
         </div>
       </div>
-
+      <!-- Input Logo -->
       <div class="mb-3">
         <label for="InputLogoExpe" class="form-label">Logo</label>
         <input *ngIf="addMode" type="file" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg"
@@ -48,7 +48,7 @@
           </p>
         </div>
       </div>
-
+      <!-- Input Inicio -->
       <div class="mb-3">
         <label for="InpuInicioExpe" class="form-label">Inicio</label>
         <input type="text" class="form-control" formControlName="inicio" id="EditInicioExpe"
@@ -56,42 +56,42 @@
           [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.touched, 'is-valid': !Inicio?.errors  && Inicio?.touched }">
         <div *ngIf="Inicio?.errors  && Inicio?.touched">
           <p *ngIf="Inicio?.hasError('required')" class="text-danger">
-            El mes y año de inicio es requerido.
+            El mes y año de inicio son requeridos.
           </p>
         </div>
       </div>
 
-
+      <!-- Input Fin -->
       <div class="mb-3">
         <label for="InputFinExpe" class="form-label">Fin</label>
         <input type="text" class="form-control" formControlName="fin" id="EditFinExpe"
-          placeholder="Ingresar mes y año de finalizacion"
+          placeholder="Ingresar mes y año de finalización"
           [ngClass]="{'is-invalid': Fin?.errors && Fin?.touched, 'is-valid': !Fin?.errors  && Fin?.touched }">
         <div *ngIf="Fin?.errors  && Fin?.touched">
           <p *ngIf="Fin?.hasError('required')" class="text-danger">
-            El mes y año de finalizacion es requerido.
+            El mes y año de finalización son requeridos.
           </p>
 
         </div>
       </div>
 
-
+      <!-- Input Descripcion -->
       <div class="mb-3">
-        <label for="InputDescripcionExpe" class="form-label">Descripcion</label>
+        <label for="InputDescripcionExpe" class="form-label">Descripción</label>
         <textarea class="form-control" id="message-text" formControlName="descripcion" id="EditDescripcionExpe"
-          placeholder="Ingresar descripcion"
+          placeholder="Ingresar descripción"
           [ngClass]="{'is-invalid': Descripcion?.errors  && Descripcion?.touched, 'is-valid': !Descripcion?.errors  && Descripcion?.touched }"></textarea>
         <div *ngIf="Descripcion?.errors && Descripcion?.touched">
           <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-            Ingresar descripcion
+            La descripción es requerida.
           </p>
         </div>
       </div>
 
-
+      <!-- Boton Agregar/Guardar -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
       </div>
 
     </div>

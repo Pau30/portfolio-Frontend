@@ -16,7 +16,7 @@ export class SkillAddEditComponent {
   id: any;
 
   ngOnInit() { }
-
+  //Armado Formgroup
   public formEdit = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl('', Validators.compose([Validators.required])),
@@ -30,9 +30,10 @@ export class SkillAddEditComponent {
     private skillHardService: SkillHardService
   ) { }
 
+  //Da acceso al mismo elemento
   @ViewChild('content') editview!: ElementRef;
 
-  //metodos del add para tomar datos
+  //Metodos del add para tomar datos
   get Nombre() {
     return this.formEdit.get('nombre');
   }
@@ -45,6 +46,7 @@ export class SkillAddEditComponent {
     return this.formEdit.get('tipo');
   }
 
+  //Metodo para traer datos al modal
   onGet(id: any) {
     this.id = this.skillHardService.verSkills(id);
     if (id === undefined) {
@@ -67,15 +69,14 @@ export class SkillAddEditComponent {
     };
     this.abrir();
   }
-
+  //Metodo para abrir el modal
   abrir() {
     this.modalService.open(this.editview)
       .result.then((result) => { }, (reason) => { }
       );
   }
-
+  //Metodo para guardar los cambios o avisar si hay error
   onSave(event: Event) {
-    //evita que se ejecute el submit
     event.preventDefault;
     if (this.formEdit.valid) {
       this.skillHardService.updateSkills(this.formEdit.getRawValue()).subscribe(data => {

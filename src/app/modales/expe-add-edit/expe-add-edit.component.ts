@@ -13,7 +13,7 @@ export class ExpeAddEditComponent {
   editar: any;
   addMode = true;
   id: any;
-
+  //Armado Formgroup
   public formAddEditExpe = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl('', Validators.compose([Validators.required])),
@@ -22,17 +22,17 @@ export class ExpeAddEditComponent {
     inicio: new FormControl('', Validators.compose([Validators.required])),
     fin: new FormControl('', Validators.compose([Validators.required])),
     descripcion: new FormControl('', Validators.compose([Validators.required])),
-   
+
   });
 
+  //Da acceso al mismo elemento
   @ViewChild('content') editview!: ElementRef;
 
-  //Constructor
-  constructor(
-    private modalService: NgbModal,
-    private experienciaService: ExperienciaService
-  ) { }
 
+  constructor(
+    private modalService: NgbModal, private experienciaService: ExperienciaService) { }
+
+  //Metodos para tomar datos
   get Nombre() {
     return this.formAddEditExpe.get('nombre');
   }
@@ -56,7 +56,7 @@ export class ExpeAddEditComponent {
   get Descripcion() {
     return this.formAddEditExpe.get('descripcion');
   }
-
+  //Metodo para traer datos al modal
   onGet(id: any) {
     this.id = this.experienciaService.verExperiencia(id);
     if (id === undefined) {
@@ -82,15 +82,15 @@ export class ExpeAddEditComponent {
     };
     this.abrir();
   }
-
+  //Metodo para abrir el modal
   abrir() {
     this.modalService.open(this.editview)
       .result.then((result) => { }, (reason) => { }
       );
   }
 
+  //Metodo para guardar los cambios o avisar si hay error
   onSave(event: Event) {
-    //evita que se ejecute el submit
     event.preventDefault;
     if (this.formAddEditExpe.valid) {
       this.experienciaService.updateExperiencia(this.formAddEditExpe.getRawValue()).subscribe(data => {

@@ -1,23 +1,23 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SkillSoftService } from 'src/app/services/skill-soft.service';
-
+import { ProyectoService } from 'src/app/services/proyecto.service';
 
 @Component({
-  selector: 'app-skill-soft-add-edit',
-  templateUrl: './skill-soft-add-edit.component.html',
-  styleUrls: ['./skill-soft-add-edit.component.css']
+  selector: 'app-proye-add-edit',
+  templateUrl: './proye-add-edit.component.html',
+  styleUrls: ['./proye-add-edit.component.css']
 })
-export class SkillSoftAddEditComponent {
+export class ProyeAddEditComponent {
   traerData: any;
   editar: any;
   addMode = true;
   id: any;
 
   ngOnInit() { }
-  //Armado Formgroup
-  public formEditSoft = new FormGroup({
+
+  //Armado del Formgroup
+  public formEditProyecto = new FormGroup({
     id: new FormControl({ value: 0, disabled: true }),
     nombre: new FormControl<string>('', Validators.compose([Validators.required])),
     imagen: new FormControl('', Validators.compose([Validators.required])),
@@ -26,39 +26,36 @@ export class SkillSoftAddEditComponent {
 
   constructor(
     private modalService: NgbModal,
-    private skillSoftService: SkillSoftService
+    private proyectoService: ProyectoService
   ) { }
 
   //Da acceso al mismo elemento
-  @ViewChild('content') editSoft!: ElementRef;
+  @ViewChild('content') editProyect!: ElementRef;
 
   //Metodos para tomar datos
   get Nombre() {
-    return this.formEditSoft.get('nombre');
+    return this.formEditProyecto.get('nombre');
   }
 
   get Imagen() {
-    return this.formEditSoft.get('imagen');
+    return this.formEditProyecto.get('imagen');
   }
 
   get Descripcion() {
-    return this.formEditSoft.get('descripcion');
+    return this.formEditProyecto.get('descripcion');
   }
 
   //Metodo para traer datos al modal
-
   onGet(id: any) {
-    this.id = this.skillSoftService.verSkills(id);
+    this.id = this.proyectoService.verProyecto(id);
     if (id === undefined) {
       this.addMode = true;
-      this.formEditSoft.reset();
-      console.log("paso 1");
+      this.formEditProyecto.reset();
     } else {
       this.addMode = false;
-      this.skillSoftService.verSkills(id).subscribe((data) => {
+      this.proyectoService.verProyecto(id).subscribe((data) => {
         this.traerData = data;
-        console.log("paso 2");
-        this.formEditSoft.setValue({
+        this.formEditProyecto.setValue({
           id: this.traerData.id,
           nombre: this.traerData.nombre,
           imagen: this.traerData.imagen,
@@ -72,30 +69,30 @@ export class SkillSoftAddEditComponent {
 
   //Metodo para abrir el modal
   abrir() {
-    this.modalService.open(this.editSoft)
+    this.modalService.open(this.editProyect)
       .result.then((result) => { }, (reason) => { }
       );
   }
 
-
   //Metodo para guardar los cambios o avisar si hay error
+
   onSave(event: Event) {
     event.preventDefault;
-    if (this.formEditSoft.valid) {
-      this.skillSoftService.updateSkills(this.formEditSoft.getRawValue()).subscribe(data => {
+    if (this.formEditProyecto.valid) {
+      this.proyectoService.updateProyecto(this.formEditProyecto.getRawValue()).subscribe(data => {
         this.editar = data;
       })
       if (this.addMode) {
-        alert("Skill agregada correctamente")
+        alert("Proyecto agregado correctamente")
         window.location.reload();
       }
       if (!this.addMode) {
-        alert("Skill editada correctamente")
+        alert("Proyecto editado correctamente")
         window.location.reload();
       }
     } else {
       alert("Error, intente nuevamente")
-      this.formEditSoft.markAllAsTouched();
+      this.formEditProyecto.markAllAsTouched();
     }
   }
 }

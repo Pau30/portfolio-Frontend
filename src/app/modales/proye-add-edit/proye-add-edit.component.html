@@ -1,17 +1,17 @@
 <!-- Modal -->
 <ng-template #content let-modal>
-  <form [formGroup]="formEditSoft" (ngSubmit)="onSave($event)">
+  <form [formGroup]="formEditProyecto" (ngSubmit)="onSave($event)">
     <!-- Titulo -->
     <div class="modal-header">
-      <h5 class="modal-title" id="editSkillSoftModalLabel" *ngIf="!addMode">Editar SKill</h5>
-      <h5 class="modal-title" id="addSkillSoftModalLabel" *ngIf="addMode">Agregar SKill</h5>
+      <h5 class="modal-title" id="formEditProyectoModalLabel" *ngIf="!addMode">Editar Proyecto</h5>
+      <h5 class="modal-title" id="addEditProyectoModalLabel" *ngIf="addMode">Agregar Proyecto</h5>
       <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
       <!-- Input Nombre -->
       <div class="mb-3">
-        <label for="InputNombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" formControlName="nombre" id="EditarSoftNombre"
+        <label for="InputNombreProyecto" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="EditarProyectoNombre"
           placeholder="Ingresar nombre"
           [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
         <div *ngIf="Nombre?.errors && Nombre?.touched">
@@ -22,11 +22,11 @@
       </div>
       <!-- Input Imagen -->
       <div class="mb-3">
-        <label for="InputImangenSkill" class="form-label">Imagen</label>
+        <label for="InputImangenProyecto" class="form-label">Imagen</label>
         <input *ngIf="addMode" type="file" class="form-control" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg"
-          formControlName="imagen" id="EditarSoftImagen" placeholder="Ingresar imagen"
+          formControlName="imagen" id="EditarProyectoImagen" placeholder="Ingresar imagen"
           [ngClass]="{'is-invalid': Imagen?.errors && Imagen?.touched, 'is-valid': !Imagen?.errors  && Imagen?.touched }">
-        <input *ngIf="!addMode" type="text" class="form-control" formControlName="imagen" id="EditarSoftImagen"
+        <input *ngIf="!addMode" type="text" class="form-control" formControlName="imagen" id="EditarProyectoImagen"
           placeholder="Ingresar imagen"
           [ngClass]="{'is-invalid': Imagen?.errors && Imagen?.touched, 'is-valid': !Imagen?.errors  && Imagen?.touched }">
         <div *ngIf="Imagen?.errors  && Imagen?.touched">
@@ -38,12 +38,12 @@
         <!-- Input Descripcion -->
         <div class="mb-3">
           <label for="InputTipo" class="form-label">Descripción</label>
-          <textarea class="form-control" formControlName="descripcion" id="EditSoftDescripcion"
+          <textarea class="form-control" formControlName="descripcion" id="EditProyectoDescripcion"
             placeholder="Ingresar descripción"
             [ngClass]="{'is-invalid': Descripcion?.errors  && Descripcion?.touched, 'is-valid': !Descripcion?.errors  && Descripcion?.touched }"></textarea>
           <div *ngIf="Descripcion?.errors && Descripcion?.touched">
             <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-              La descripción es requerida
+              La descripción es requerida.
             </p>
           </div>
         </div>

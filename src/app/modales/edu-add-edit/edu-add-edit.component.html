@@ -1,14 +1,14 @@
 <!-- Modal -->
 <ng-template #content let-modal>
   <form [formGroup]="formAddEditEdu" (ngSubmit)="onSave($event)">
-
+    <!-- Titulo -->
     <div class="modal-header">
-      <h5 class="modal-title" id="EditEduModalLabel" *ngIf="!addMode">Editar educacion</h5>
-      <h5 class="modal-title" id="addEduModalLabel" *ngIf="addMode">Agregar educacion</h5>
+      <h5 class="modal-title" id="EditEduModalLabel" *ngIf="!addMode">Editar Educacion</h5>
+      <h5 class="modal-title" id="addEduModalLabel" *ngIf="addMode">Agregar Educacion</h5>
       <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
     </div>
     <div class="modal-body">
-
+      <!-- Input Nombre -->
       <div class="mb-3">
         <label for="InputNombreEdu" class="form-label">Nombre</label>
         <input type="text" class="form-control" formControlName="nombre" id="EditNombreEdu"
@@ -20,7 +20,7 @@
           </p>
         </div>
       </div>
-
+      <!-- Input Nombre Corto -->
       <div class="mb-3">
         <label for="InputNombreCortoEdu" class="form-label">Nombre Corto</label>
         <input type="text" class="form-control" formControlName="nombreCorto" id="EditNombreCortoEdu"
@@ -32,7 +32,7 @@
           </p>
         </div>
       </div>
-
+      <!-- Input Titulo -->
       <div class="mb-3">
         <label for="InputTituloEdu" class="form-label">Título</label>
         <input type="text" class="form-control" formControlName="titulo" id="EditTituloEdu"
@@ -40,11 +40,11 @@
           [ngClass]="{'is-invalid': Titulo?.errors  && Titulo?.touched, 'is-valid': !Titulo?.errors  && Titulo?.touched }">
         <div *ngIf="Titulo?.errors && Titulo?.touched">
           <p *ngIf="Titulo?.hasError('required')" class="text-danger">
-            Ingresar título
+            Ingresar titulo.
           </p>
         </div>
       </div>
-
+      <!-- Input Logo -->
       <div class="mb-3">
         <label for="InputLogoEdu" class="form-label">Logo</label>
         <input type="file" *ngIf="addMode" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg"
@@ -56,11 +56,11 @@
           [ngClass]="{'is-invalid': Logo?.errors  && Logo?.touched, 'is-valid': !Logo?.errors  && Logo?.touched }">
         <div *ngIf="Logo?.errors && Logo?.touched">
           <p *ngIf="Logo?.hasError('required')" class="text-danger">
-            Seleccionar Archivo
+            Ingresar logo.
           </p>
         </div>
       </div>
-
+      <!-- Input Inicio -->
       <div class="mb-3">
         <label for="InpuInicioEdu" class="form-label">Inicio</label>
         <input type="number" class="form-control" formControlName="inicio" id="EditInicioEdu"
@@ -68,42 +68,40 @@
           [ngClass]="{'is-invalid': Inicio?.errors && Inicio?.touched, 'is-valid': !Inicio?.errors  && Inicio?.touched }">
         <div *ngIf="Inicio?.errors  && Inicio?.touched">
           <p *ngIf="Inicio?.hasError('required')" class="text-danger">
-            El año de inicio es requerido.
+            Ingresar año de inicio.
           </p>
         </div>
       </div>
       <br />
-
+      <!-- Input Fin -->
       <div class="mb-3">
         <label for="InputFinEdu" class="form-label">Fin</label>
         <input type="number" class="form-control" formControlName="fin" id="EditFinEdu"
-          placeholder="Ingresar año de finalizacion"
+          placeholder="Ingresar año de finalización"
           [ngClass]="{'is-invalid': Fin?.errors && Fin?.touched, 'is-valid': !Fin?.errors  && Fin?.touched }">
         <div *ngIf="Fin?.errors  && Fin?.touched">
           <p *ngIf="Fin?.hasError('required')" class="text-danger">
-            El año de finalizacion es requerido.
+            Ingresar año de finalización.
           </p>
-
         </div>
       </div>
       <br />
-
+      <!-- Input Descripcion -->
       <div class="mb-3">
-        <label for="InputDescripcionEdu" class="form-label">Descripcion</label>
+        <label for="InputDescripcionEdu" class="form-label">Descripción</label>
         <textarea class="form-control" id="message-text" formControlName="descripcion" id="EditDescripcionEdu"
-          placeholder="Ingresar descripcion"
+          placeholder="Ingresar descripción"
           [ngClass]="{'is-invalid': Descripcion?.errors  && Descripcion?.touched, 'is-valid': !Descripcion?.errors  && Descripcion?.touched }"></textarea>
         <div *ngIf="Descripcion?.errors && Descripcion?.touched">
           <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
-            Ingresar descripcion
+            Ingresar descripción.
           </p>
         </div>
       </div>
-
-
+      <!-- Boton Agregar/Guardar -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
-        <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
       </div>
 
     </div>
