@@ -1,0 +1,63 @@
+/*Estilo titulo principal y animacion*/
+h1 {
+  font-family: "Fredoka One", sans-serif;
+  font-size: calc(1rem + 3vw);
+  text-align: start;
+  color: #00EBC6;
+  -webkit-text-stroke: 1px #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  padding: 1px;
+  transition: 2s;
+  transform: scale(0);
+}
+
+h1.fadeIn {
+    transform: scale(1);
+}
+
+/*Estilos para efecto FadeIn*/
+.ani {
+  opacity: 0;
+  transition: 1s;
+  transform: translateX(-100px);
+}
+
+.ani.fadeIn {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*Estilos Agregar*/
+span{
+  font-size: calc(.8rem + .6vw);
+  color: #ffffff;
+}
+
+/*Borde blanco inferior titulo*/
+
+.titulo {
+  border-bottom: 1px solid #ffffff;
+}
+
+/*Titulo Card*/
+h5 {
+  color: #ffffff;
+  font-size: calc(.6rem + .8vw);
+}
+
+/*Cuerpo Card*/
+.card-body {
+  background-color: rgb(16, 181, 164)
+}
+
+img{
+  width: 100%;
+}
+
+@media (max-width: 767.98px) {
+  h1 {
+    letter-spacing: 7px;
+  }
+
+}
