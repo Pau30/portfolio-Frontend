@@ -1,19 +1,17 @@
-<div class="container-fluid mt-5 mb-5" >
-  <div class="titulo m-5 d-flex flex-row justify-content-between">
-    <div>
-      <h1 #expe id="experiencia">Experiencia</h1>
-    </div>
-
-    <!-- Modal boton agregar experiencia -->
-    <button #expe3 type="button" class="btn text-white d-flex flex-row align-items-end ani" (click)="addEditExperiencia(id)"
-      *ngIf="loggedIn">
+<div class="container-fluid mt-5 mb-5" id="experiencia">
+  <!-- Titulo -->
+  <h1 #expe class="titulo mt-5 mb-0" >Experiencia</h1>
+  <div class="d-flex justify-content-end">
+    <!-- Modal boton agregar educacion -->
+    <button #expe3 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+      (click)="addEditExperiencia(id)" *ngIf="loggedIn">
       <i class="fa-solid fa fa-plus m-1"></i>
       <span>Agregar</span>
     </button>
   </div>
-
-  <div class=" row d-flex flex-row align-items-center justify-content-center m-5 ani" #expe1>
-    <div class="col-lg-3 col-md-11 d-flex p-3" id="botones">
+  <!-- Botones de seleccion -->
+  <div class=" row d-flex flex-row align-items-center justify-content-center ani" #expe1>
+    <div class="col-lg-3 col-md-11 d-flex p-2" id="botones">
       <div *ngFor="let expe of experiencias; let i = index">
         <button class="circulo text-center m-3" autofocus (click)="seleccionado(expe.id)"
           [ngClass]="{'active': selectedItem == expe.id}">
@@ -21,28 +19,25 @@
         </button>
       </div>
     </div>
-
-    <div class="col-lg-7 col-md-11 p-2 ani" #expe2>
+    <!--Cuerpo de seccion -->
+    <div class="col-lg-7 col-md-11 mt-2 p-2 ani" #expe2>
       <div *ngFor="let expe of experiencias; let i = index"
         [ngStyle]="{'display': selectedItem == expe.id ? 'contents':'none'}">
-        <div>
-          <div>
+          <!-- Titulo y Subtitulo-->
+          <div class="container mt-2 pb-0 p-3">
             <span id="puesto">{{expe.puesto}} </span><span id="subEmpresa">en {{expe.nombre}}</span>
           </div>
-          <p class="text-start" id="periodo">{{expe.inicio}}-{{expe.fin}}</p>
-
+          <p class="text-start pt-0 p-3" id="periodo">{{expe.inicio}}-{{expe.fin}}</p>
+          <!-- Descripcion-->
           <div class="container">
             <div class="text-white mt-5">
-              <p>{{expe.descripcion}}</p>
+              <p id="descri">{{expe.descripcion}}</p>
             </div>
+            <!-- Logo-->
             <div class="container  mt-5">
               <img [src]="expe.logo" alt="logo">
             </div>
           </div>
-
-
-        </div>
-
         <div class="container d-flex justify-content-end">
           <!-- Modal boton edicion Experiencia -->
           <button type="button" class="btn text-white fa fa-pencil" (click)="addEditExperiencia(expe.id)"
@@ -53,7 +48,6 @@
             <i class="fa-solid fa-trash text-white"></i>
           </button>
         </div>
-
       </div>
     </div>
   </div>

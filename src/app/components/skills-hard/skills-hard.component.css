@@ -30,12 +30,12 @@ span{
 .ani {
   opacity: 0;
   transition: 1s;
-  transform:translateY(-100px);
+  transform:translateX(-100px);
 }
 
 .ani.fadeIn {
  opacity: 1;
- transform:translateY(0px);
+ transform:translateX(-0px);
 }
 
 
@@ -83,7 +83,7 @@ h4 {
 }
 
 .spring {
-  background: linear-gradient(to left, #78ffd6 0%, #a8ff78 100%);
+  background: linear-gradient(to left, #5dc5a6 0%, #89d163 100%);
 }
 
 .mysql {

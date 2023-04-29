@@ -10,38 +10,46 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
+
   //traer datos distintos datos del array
   estudios: Educacion[] = [];
   selectedItem = 1;
   loggedIn = false;
   id: any;
 
+  //Permite tener acceso a las funciones del modal editar
   @ViewChild(EduAddEditComponent) editView !: EduAddEditComponent
 
   constructor(private educacionService: EducacionService, private tokenService: TokenService) { }
 
+  //Lo que se carga cuando se carga la pagina
   ngOnInit(): void {
 
     this.cargarEducacion();
     if (this.tokenService.getToken()) {
+      //Booleano que oculta los botones de edicion, etc si el usuario no esta loggedIn
       this.loggedIn = true;
     } else {
       this.loggedIn = false;
     }
-
   }
+
+  //Metodo para cargar las experiencias
   cargarEducacion(): void {
     this.educacionService.listEducacion().subscribe(data => { this.estudios = data });
   }
 
+  //Metodo para seleccionar la experiencia que aparece en pantalla
   seleccionado(id) {
     this.selectedItem = id;
   }
 
+  //Metodo para editar o agregar
   addEditEducacion(id: any) {
     this.editView.onGet(id);
   }
 
+  //Metodo para borrar
   deleteEducacion(id: number) {
     if (confirm('¿Estas seguro que queres eliminar este estudio?')) {
       this.educacionService.eliminarEducacion(id).subscribe(data => {
@@ -50,9 +58,9 @@ export class EducacionComponent {
     }
   }
 
-   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
-   ngAfterViewInit() {
-    const threshold = 0.5;
+  //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
+  ngAfterViewInit() {
+    const threshold = 0.4;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

@@ -1,16 +1,15 @@
-<div class="container-fluid mt-5 mb-5">
-
-  <div class="titulo m-5 d-flex flex-row justify-content-between">
-    <div>
-      <h1 #hardskill id="hard">Hard Skills</h1>
-    </div>
-
-     <!-- Modal boton agregar Skill -->
-     <button #hardskill4 type="button" class="btn text-white d-flex flex-row align-items-end ani" (click)="addEditSkill(id)"  *ngIf="loggedIn">
-      <i class="fa-solid fa fa-plus fa m-1"></i>
+<div class="container-fluid mt-5 mb-5" id="hard">
+    <!-- Titulo -->
+    <h1 #hardskill class="titulo mt-5 mb-0">Hard Skills</h1>
+   <div class="d-flex justify-content-end">
+    <!-- Modal boton agregar educacion -->
+    <button #hardskill4 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+    (click)="addEditSkill(id)" *ngIf="loggedIn">
+      <i class="fa-solid fa fa-plus m-1"></i>
       <span>Agregar</span>
     </button>
   </div>
+
 
   <div class="row justify-content-center" >
     <div class="col-lg-5 col-md-10 ani" #hardskill1>

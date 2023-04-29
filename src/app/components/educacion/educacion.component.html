@@ -1,32 +1,34 @@
-<div class="container-fluid mt-5 mb-5" >
-  <div class="titulo m-5 d-flex flex-row justify-content-between">
-    <div>
-      <h1 #edu id="educacion">Educación</h1>
-    </div>
+<div class="container-fluid mt-5 mb-5" id="educacion">
+  <!-- Titulo -->
+  <h1 #edu class="titulo mt-5 mb-0">Educación</h1>
+  <div class="d-flex justify-content-end">
     <!-- Modal boton agregar educacion -->
-    <button #edu3 type="button" class="btn text-white d-flex flex-row align-items-end ani" (click)="addEditEducacion(id)"
-      *ngIf="loggedIn">
+    <button #edu3 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+      (click)="addEditEducacion(id)" *ngIf="loggedIn">
       <i class="fa-solid fa fa-plus m-1"></i>
       <span>Agregar</span>
     </button>
   </div>
 
-  <div class="row d-flex align-items-center justify-content-center m-5 ani" #edu1>
-    <div class="col-lg-7 col-md-11 p-2 ani" #edu2>
+  <!-- Cuerpo de la seccion -->
+  <div class="row d-flex align-items-center justify-content-center mt-5 mb-5 ani" #edu1>
+    <div class="col-lg-7 col-md-11 mt-2 p-2 ani" #edu2>
       <div *ngFor="let estudio of estudios; let i = index"
         [ngStyle]="{'display': selectedItem == estudio.id ? 'contents':'none'}">
-        <div>
-          <div>
-            <span id="puesto">{{estudio.titulo}} </span><span id="subEdu">en {{estudio.nombre}}</span>
+        <!-- Titulo y Subtitulo-->
+        <div class="container mt-2 pb-0 p-3 ">
+          <span id="puesto">{{estudio.titulo}} </span><span id="subEdu">en {{estudio.nombre}}</span>
+        </div>
+        <!-- Periodo-->
+        <p class="text-start pt-0 p-3" id="periodo">{{estudio.inicio}}-{{estudio.fin}}</p>
+        <div class="container">
+          <!-- Descripcion-->
+          <div class="text-white mt-5">
+            <p id="descri">{{estudio.descripcion}}</p>
           </div>
-          <p class="text-start" id="periodo">{{estudio.inicio}}-{{estudio.fin}}</p>
-          <div class="container">
-            <div class="text-white mt-5">
-              <p>{{estudio.descripcion}}</p>
-            </div>
-            <div class="container  mt-5">
-              <img [src]="estudio.logo" alt="logo">
-            </div>
+          <!-- Logo institucion -->
+          <div class="container  mt-5">
+            <img [src]="estudio.logo" alt="logo">
           </div>
         </div>
         <div class="container d-flex justify-content-end">
@@ -41,7 +43,8 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-11 d-flex p-3" id="botones">
+    <!-- Botones para seleccionar el estudio -->
+    <div class="col-lg-3 col-md-11 d-flex" id="botones">
       <div *ngFor="let estudio of estudios; let i = index">
         <button class="circulo text-center m-3" autofocus (click)="seleccionado(estudio.id)"
           [ngClass]="{'active': selectedItem == estudio.id}">
