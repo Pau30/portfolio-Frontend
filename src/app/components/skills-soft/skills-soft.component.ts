@@ -51,7 +51,7 @@ export class SkillsSoftComponent {
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
   ngAfterViewInit() {
-    const threshold = 0.5;
+    const threshold = 0.3;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -66,11 +66,11 @@ export class SkillsSoftComponent {
       },
       { threshold }
     );
-    observer.observe(this.softskill.nativeElement);
-    observer.observe(this.softskill1.nativeElement);
-    observer.observe(this.softskill2.nativeElement);
+    observer.observe(this.softskills.nativeElement);
+    observer.observe(this.softskills1.nativeElement);
+    observer.observe(this.softskills2.nativeElement);
   }
-  @ViewChild('softskill') softskill!: ElementRef;
-  @ViewChild('softskill1') softskill1!: ElementRef;
-  @ViewChild('softskill2') softskill2!: ElementRef;
+  @ViewChild('softskills') softskills!: ElementRef;
+  @ViewChild('softskills1') softskills1!: ElementRef;
+  @ViewChild('softskills2') softskills2!: ElementRef;
 }

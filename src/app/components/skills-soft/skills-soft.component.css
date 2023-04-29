@@ -8,27 +8,24 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 15px;
   padding: 1px;
-  opacity: 0;
   transition: 2s;
   transform: scale(0);
 }
 
 h1.fadeIn {
-  opacity: 1;
-  transform: scale(1);
+    transform: scale(1);
 }
 
 /*Estilos para efecto FadeIn*/
 .ani {
   opacity: 0;
   transition: 1s;
-  transform:translateY(-100px);
-
+  transform: translateX(-100px);
 }
 
 .ani.fadeIn {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateX(0);
 }
 
 /*Estilos Agregar*/
