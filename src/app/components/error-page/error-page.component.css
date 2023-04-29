@@ -1,0 +1,10 @@
+#fondo{
+  height: 100vh;
+  background: #00EBC6;
+  animation: changecolor 5s infinite alternate;
+}
+
+@keyframes changecolor{
+  from {background-color: #00EBC6;}
+  to {background-color: #C91A76;}
+}
