@@ -21,6 +21,8 @@ import { EduAddEditComponent } from './modales/edu-add-edit/edu-add-edit.compone
 import { ExpeAddEditComponent } from './modales/expe-add-edit/expe-add-edit.component';
 import { AboutmeAddEditComponent } from './modales/aboutme-add-edit/aboutme-add-edit.component';
 import { ProyeAddEditComponent } from './modales/proye-add-edit/proye-add-edit.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ProyeAddEditComponent } from './modales/proye-add-edit/proye-add-edit.c
     ExpeAddEditComponent,
     AboutmeAddEditComponent,
     EduAddEditComponent,
-    ProyeAddEditComponent
+    ProyeAddEditComponent,
+    ContactoComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
