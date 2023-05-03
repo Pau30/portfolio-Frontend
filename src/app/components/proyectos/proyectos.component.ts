@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ProyeAddEditComponent } from 'src/app/modales/proye-add-edit/proye-add-edit.component';
 import { Proyecto } from 'src/app/model/proyecto';
@@ -47,6 +48,11 @@ export class ProyectosComponent {
         this.cargarSkillSoft();
       })
     }
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.proyectos, event.previousIndex, event.currentIndex);
   }
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { AboutmeAddEditComponent } from './modales/aboutme-add-edit/aboutme-add-
 import { ProyeAddEditComponent } from './modales/proye-add-edit/proye-add-edit.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     EduAddEditComponent,
     ProyeAddEditComponent,
     ContactoComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    InteresAddEditComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,7 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

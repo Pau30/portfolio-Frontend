@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SkillSoftAddEditComponent } from 'src/app/modales/skill-soft-add-edit/skill-soft-add-edit.component';
 import { SkillSoft } from 'src/app/model/skill-soft';
@@ -47,6 +48,11 @@ export class SkillsSoftComponent {
         this.cargarSkillSoft();
       })
     }
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.skillSoft, event.previousIndex, event.currentIndex);
   }
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen

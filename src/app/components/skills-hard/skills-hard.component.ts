@@ -3,6 +3,7 @@ import { SkillAddEditComponent } from 'src/app/modales/skill-add-edit/skill-add-
 import { SkillHard } from 'src/app/model/skill-hard';
 import { SkillHardService } from 'src/app/services/skill-hard.service';
 import { TokenService } from 'src/app/services/token.service';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 
 
@@ -49,6 +50,11 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
         this.cargarSkill();
       })
     }
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.skills, event.previousIndex, event.currentIndex);
   }
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen

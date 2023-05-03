@@ -1,18 +1,18 @@
-<div class="container-fluid mt-5 mb-5">
+<div class="container-fluid mt-5 mb-5" id="proyectos">
   <!-- Titulo -->
-  <h1 #proyecto class="titulo mt-5 mb-0" id="proyecto">Proyectos</h1>
+  <h1 #proyecto class="titulo mt-5 mb-0">Proyectos</h1>
   <div class="d-flex justify-content-end">
    <!-- Modal boton agregar Proyecto -->
-   <button #proyecto2 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+   <button #proyecto2 type="button" class="btn text-white d-flex flex-row align-items-center ani"
    (click)="addEditProyecto(id)" *ngIf="loggedIn">
      <i class="fa-solid fa fa-plus m-1"></i>
      <span>Agregar</span>
    </button>
  </div>
  <!-- Cuerpo de la seccion -->
-  <div #proyecto1 class="col-12 d-flex flex-wrap justify-content-evenly align-items-center mt-5 mb-5 ani">
-    <div *ngFor="let proyecto of proyectos; let i = index">
-      <div class="card mt-2 mb-2" style="width: 18rem;">
+  <div #proyecto1 class="col-12 d-flex flex-wrap justify-content-evenly align-items-center mt-5 mb-5 ani" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let proyecto of proyectos; let i = index" cdkDrag>
+      <div class="card m-2 " style="width: 18rem;">
         <img [src]="proyecto.imagen" class="card-img-top" alt="proyecto">
         <div class="card-body align-items-strech">
           <h5 class="card-title ">{{proyecto.nombre}}</h5>

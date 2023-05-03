@@ -38,24 +38,12 @@ span{
  transform:translateX(-0px);
 }
 
-
 /*Borde inferior titulo principal*/
 
 .titulo {
   border-bottom: 1px solid #ffffff;
 }
 
-/*Estilos Subtitulos*/
-h4 {
-  text-align: center;
-  margin: 0 3%;
-  font-size: calc(.8rem + .8vw);
-}
-
-/*Tamaño letra nombre skill*/
-.font-weight-bold {
-  font-size: calc(.5rem + .5vw);
-}
 
 /* Estilos degrade de las barras de progreso de las skills*/
 .html {
