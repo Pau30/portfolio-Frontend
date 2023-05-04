@@ -1,0 +1,47 @@
+<!-- Modal -->
+<ng-template #content let-modal>
+  <form [formGroup]="formAddEditInt" (ngSubmit)="onSave($event)">
+
+    <!-- Titulo -->
+    <div class="modal-header">
+      <h5 class="modal-title" id="editIntModalLabel" *ngIf="!addMode">Editar Hobby</h5>
+      <h5 class="modal-title" id="addIntModalLabel" *ngIf="addMode">Agregar Hobby</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Input Nombre -->
+      <div class="mb-3">
+        <label for="InputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="EditarNombreInt" placeholder="Ingresar nombre"
+          [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+            Ingresar nombre
+          </p>
+        </div>
+      </div>
+
+      <!-- Input Icon -->
+        <div class="mb-3">
+          <label for="InputIcon" class="form-label">Icon</label>
+          <input type="text" class="form-control" formControlName="icon" id="InputEditarIcon"
+            placeholder="Editar Icon"
+            [ngClass]="{'is-invalid': Icon?.errors  && Icon?.touched, 'is-valid': !Icon?.errors  && Icon?.touched }">
+          <div *ngIf="Icon?.errors && Icon?.touched">
+            <p *ngIf="Icon?.hasError('required')" class="text-danger">
+              Ingresar Icon
+            </p>
+          </div>
+        </div>
+
+
+      <!-- Boton Agregar/Guardar -->
+      <div class="modal-footer">
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+      </div>
+    </div>
+  </form>
+</ng-template>
+

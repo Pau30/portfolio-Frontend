@@ -4,9 +4,7 @@
 
 /*Estilos generales*/
 .container-fluid {
-  font-family: "Roboto", sans-serif;
-  color: #ffffff;
-  margin-top: 125px;
+  margin-top: 100px;
 }
 
 .col {
@@ -15,7 +13,8 @@
 
 /*Estilos titulo "Hola soy..." */
 .titulo {
-  font-size: calc(.9rem + 4vw);
+  font-size: calc(1rem + 4vw);
+  color: #ffffff;
   letter-spacing: 15px;
   text-align: center;
   text-transform: uppercase;
@@ -23,14 +22,28 @@
   font-weight: 900;
 }
 
+
 /*Estilos nombre*/
 b {
   color: #00EBC6;
 }
 
-#titulo {
+#nombre {
   color: #C91A76;
 }
+
+/*Estilos para efecto FadeIn*/
+.ani {
+  opacity: 0;
+  transition: 2s;
+  transform:translateX(-100px);
+}
+
+.ani.fadeIn {
+ opacity: 1;
+ transform:translateX(-0px);
+}
+
 
 /*Estilo imgen*/
 .yoimg {
@@ -38,15 +51,35 @@ b {
   border-radius: 50%;
   border: 10px double #ffffff;
   min-width: 100px;
-  width: 11%;
+  width: 15%;
   height: auto;
 }
 
 /*Estilos descripcion*/
 #descrip {
   width: 75%;
+  font-size: calc(.4rem + 1vw);
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
 }
 
-.parrafo {
-  font-size: calc(.5rem + .6vw);
+/*Estilos hobbies*/
+#listHobby{
+  list-style: none;
+  float: left;
+}
+
+#icons{
+  width: 80px;
+  height: 80px;
+  border: 2px solid #ffffff;
+  border-radius: 10%;
+  background-color: #C91A76;
+}
+#hobbyNombre{
+  font-size: 12px;
+}
+
+#addBtn{
+  font-size: 18px;
 }

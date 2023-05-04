@@ -1,1 +1,55 @@
-<p>aboutme-add-edit works!</p>
+<!-- Modal -->
+<ng-template #content let-modal>
+  <form [formGroup]="formEditAbout" (ngSubmit)="onSave($event)">
+    <!-- Titulo -->
+    <div class="modal-header">
+      <h5 class="modal-title" id="EditAboutModalLabel">Editar Persona</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <!-- Input Nombre -->
+      <div class="mb-3">
+        <label for="InputNombreEdu" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="EditNombreAbout"
+          placeholder="Ingresar nombre"
+          [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+            Ingresar nombre
+          </p>
+        </div>
+      </div>
+      <!-- Input Imagen -->
+      <div class="mb-3">
+        <label for="InputImgAbout" class="form-label">Imagen</label>
+        <input type="text" class="form-control" formControlName="imagen" id="EditImgAbout"
+          placeholder="Seleccionar imagen"
+          [ngClass]="{'is-invalid': Imagen?.errors  && Imagen?.touched, 'is-valid': !Imagen?.errors  && Imagen?.touched }">
+        <div *ngIf="Imagen?.errors && Imagen?.touched">
+          <p *ngIf="Imagen?.hasError('required')" class="text-danger">
+            Ingresar Imagen.
+          </p>
+        </div>
+      </div>
+      <!-- Input Descripcion -->
+      <div class="mb-3">
+        <label for="InputDescripcionAbout" class="form-label">Descripción</label>
+        <textarea class="form-control" id="message-text" formControlName="descripcion" id="EditDescripcionAbout"
+          placeholder="Ingresar descripción"
+          [ngClass]="{'is-invalid': Descripcion?.errors  && Descripcion?.touched, 'is-valid': !Descripcion?.errors  && Descripcion?.touched }"></textarea>
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+          <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+            Ingresar descripción.
+          </p>
+        </div>
+      </div>
+      <!-- Boton Agregar/Guardar -->
+      <div class="modal-footer">
+        <button type="submit" class="btn" data-bs-dismiss="modal" >Guardar</button>
+      </div>
+
+    </div>
+
+  </form>
+</ng-template>
+

@@ -1,25 +1,52 @@
-<div class="container-fluid mb-5 flex-column">
-  <!-- Nombre del propietario del portfolio -->
-  <div class="container text-white">
-    <h1 class="titulo">Hola! Soy <b id="titulo">{{persona.nombre}}</b></h1>
+<div class="container-fluid mb-5 flex-column" id="aboutme">
+  <!-- Nombre -->
+  <div #about class="container text-white ani">
+    <h1 class="titulo">Hola! Soy <b id="nombre">{{persona.nombre}}</b></h1>
   </div>
-  <!--Imagen del propietario del portfolio -->
-  <div class="container mt-5 mb-5">
-    <div class="container d-flex justify-content-center align-items-center">
-      <img class="yoimg" [src]="persona.imagen" alt="yo">
-    </div>
+  <!--Imagen -->
+  <div class="container mt-5 mb-5 d-flex justify-content-center align-items-center">
+    <img #about2 class="yoimg ani" [src]="persona.imagen" alt="yo">
   </div>
-  <!--Descripcion del propietario del portfolio -->
-  <div class="container d-flex align-items-center flex-column mt-5">
-    <div class="container text-left" id="descrip">
+  <!--Descripcion -->
+  <div #about3 class="container d-flex align-items-center flex-column mt-5 ani">
+    <div class="container text-center" id="descrip">
       <p class="parrafo"> {{persona.descripcion}}
       </p>
     </div>
     <div class="container d-flex justify-content-end">
       <!-- Boton modal edicion -->
-      <i class="fa-solid fa-pencil m-2" *ngIf="loggedIn"></i>
+      <i class="fa-solid fa-pencil m-2 text-white" (click)="EditPersona(persona.id)" *ngIf="loggedIn"></i>
       <!--Boton eliminar -->
-      <i class="fa-solid fa-trash m-2" *ngIf="loggedIn"></i>
+      <i class="fa-solid fa-trash m-2 text-white" *ngIf="loggedIn"></i>
+    </div>
+    <!-- Modal boton agregar Hobby -->
+    <div class="container d-flex justify-content-end mt-5 mb-1">
+    <button type="button" class="btn text-white"
+      (click)="addEditInteres(id)" *ngIf="loggedIn">
+      <i class="fa-solid fa fa-plus fa-1x m-1"></i>
+      <span class="text-white" id="addBtn">Agregar</span>
+    </button>
+  </div>
+    <!--Hobbies -->
+    <div class=" mb-5 " cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let interes of intereses; let i = index" id="listHobby" cdkDrag [cdkDragDisabled]="!loggedIn">
+        <ul>
+          <li class="d-flex flex-column align-items-center justify-content-center mb-1" id="icons">
+            <i class="fa-solid {{interes.icon}} fa-2x text-white justify-content-center"></i>
+            <span class="text-uppercase text-white text-center mt-1" id="hobbyNombre">{{interes.nombre}}</span>
+          </li>
+          <div class="container d-flex justify-content-end">
+            <!-- Boton modal edicion -->
+            <i class="fa-solid fa-pencil m-2 text-white" (click)="addEditInteres(interes.id)" *ngIf="loggedIn"></i>
+            <!--Boton eliminar -->
+            <i class="fa-solid fa-trash m-2 text-white" (click)="deleteInteres(interes.id)" *ngIf="loggedIn"></i>
+          </div>
+        </ul>
+
+      </div>
+
     </div>
   </div>
 </div>
+<app-aboutme-add-edit></app-aboutme-add-edit>
+<app-interes-add-edit></app-interes-add-edit>
