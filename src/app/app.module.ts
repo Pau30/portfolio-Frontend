@@ -25,6 +25,7 @@ import { ProyeAddEditComponent } from './modales/proye-add-edit/proye-add-edit.c
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-edit.component';
+import { ComponentsComponent } from './components/welcome/components/components.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-
     ContactoComponent,
     ErrorPageComponent,
     InteresAddEditComponent,
+    ComponentsComponent,
 
   ],
   imports: [
