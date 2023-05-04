@@ -1,3 +1,4 @@
+<div class="contenido">
 <app-navigation></app-navigation>
 
 <app-aboutme></app-aboutme>
@@ -13,3 +14,35 @@
 <app-proyectos></app-proyectos>
 
 <app-contacto></app-contacto>
+
+<div class="scrollToTop" [ngClass]="{'showScrollToTop': windowScrolled}">
+    <button type="button" class="btn" data-toggle="button" aria-pressed="true" (click)="scrollToTop()">
+        <i class="fas fa-chevron-up text-white" ></i>
+    </button>
+  </div>
+
+</div>
+
+<div class="background">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+

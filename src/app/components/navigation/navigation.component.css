@@ -6,8 +6,6 @@
   margin-right: 10px;
 }
 
-
-
 #argprog {
   height: 70px;
   width: auto;
@@ -24,13 +22,27 @@
   color: #fff;
   font-weight: 600;
   text-decoration: underline;
-  transform: scale(110%);
+  transform: scale(103%);
 }
 
-.fa {
+
+
+.btn-light{
+  background-color: #C91A76;
   color: #fff;
 }
 
 .btn:hover {
   transform: scale(120%);
+}
+
+.navbar-expand-md .navbar-nav {
+  flex-wrap: wrap;
+}
+
+.dropdown.open.active
+{
+  color: #fff;
+  background-color: #b91773;
+  border-color: #fff;
 }
