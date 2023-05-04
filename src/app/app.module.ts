@@ -25,6 +25,7 @@ import { ProyeAddEditComponent } from './modales/proye-add-edit/proye-add-edit.c
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-edit.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 
@@ -50,6 +51,7 @@ import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-
     ContactoComponent,
     ErrorPageComponent,
     InteresAddEditComponent,
+    WelcomeComponent,
 
   ],
 
