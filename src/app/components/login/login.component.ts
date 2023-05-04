@@ -16,7 +16,7 @@ export class LoginComponent {
     nombreUsuario: new FormControl('', Validators.compose([Validators.required])),
     password: new FormControl('', Validators.compose([Validators.required])),
   });
-  
+
   loggedIn = false;
   loginUsuario: LoginUsuario;
   nombreUsuario: '';
@@ -55,10 +55,15 @@ export class LoginComponent {
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
      this.roles = data.authorities;
-      window.location.reload();
+     window.location.reload();
     }, err=>{
       this.loggedIn=false;
-      alert("Usuario o contraseña inconrrectos")
+      alert("Usuario o contraseña inconrrectos");
+      this.logform.reset();
     })
+  }
+
+  onClose():void{
+    this.logform.reset();
   }
 }
