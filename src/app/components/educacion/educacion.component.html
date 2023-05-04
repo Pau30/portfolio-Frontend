@@ -3,7 +3,7 @@
   <h1 #edu class="titulo mt-5 mb-0">Educación</h1>
   <div class="d-flex justify-content-end">
     <!-- Modal boton agregar educacion -->
-    <button #edu3 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+    <button #edu3 type="button" class="btn text-white d-flex flex-row align-items-center ani"
       (click)="addEditEducacion(id)" *ngIf="loggedIn">
       <i class="fa-solid fa fa-plus m-1"></i>
       <span>Agregar</span>
@@ -11,8 +11,8 @@
   </div>
 
   <!-- Cuerpo de la seccion -->
-  <div class="row d-flex align-items-center justify-content-center mt-5 mb-5 ani" #edu1>
-    <div class="col-lg-7 col-md-11 mt-2 p-2 ani" #edu2>
+  <div #edu1 class="row d-flex align-items-center justify-content-center mt-5 mb-5 ani" >
+    <div #edu2 class="col-lg-7 col-md-11 mt-2 p-2 ani" >
       <div *ngFor="let estudio of estudios; let i = index"
         [ngStyle]="{'display': selectedItem == estudio.id ? 'contents':'none'}">
         <!-- Titulo y Subtitulo-->
@@ -44,8 +44,8 @@
       </div>
     </div>
     <!-- Botones para seleccionar el estudio -->
-    <div class="col-lg-3 col-md-11 d-flex" id="botones">
-      <div *ngFor="let estudio of estudios; let i = index">
+    <div class="col-lg-3 col-md-11 d-flex" id="botones" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let estudio of estudios; let i = index" cdkDrag [cdkDragDisabled]="!loggedIn">
         <button class="circulo text-center m-3" autofocus (click)="seleccionado(estudio.id)"
           [ngClass]="{'active': selectedItem == estudio.id}">
           <p class="nombre">{{estudio.nombreCorto}}</p>

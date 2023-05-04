@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ExpeAddEditComponent } from 'src/app/modales/expe-add-edit/expe-add-edit.component';
 import { Experiencia } from 'src/app/model/experiencia';
@@ -55,6 +56,11 @@ export class ExperienciaComponent {
         this.cargarExperiencia();
       })
     }
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.experiencias, event.previousIndex, event.currentIndex);
   }
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen

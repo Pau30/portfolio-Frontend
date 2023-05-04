@@ -54,8 +54,9 @@ export class SkillsHardComponent implements OnInit, AfterViewInit {
 
   //Metodo drag and drop
   drop(event: CdkDragDrop<string[]>) {
+    if(this.loggedIn = true){
     moveItemInArray(this.skills, event.previousIndex, event.currentIndex);
-  }
+  }}
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
   ngAfterViewInit() {

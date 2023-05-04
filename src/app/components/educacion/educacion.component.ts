@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { EduAddEditComponent } from 'src/app/modales/edu-add-edit/edu-add-edit.component';
 import { Educacion } from 'src/app/model/educacion';
@@ -42,6 +43,11 @@ export class EducacionComponent {
   //Metodo para seleccionar la experiencia que aparece en pantalla
   seleccionado(id) {
     this.selectedItem = id;
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.estudios, event.previousIndex, event.currentIndex);
   }
 
   //Metodo para editar o agregar

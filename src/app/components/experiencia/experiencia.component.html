@@ -3,16 +3,16 @@
   <h1 #expe class="titulo mt-5 mb-0" >Experiencia</h1>
   <div class="d-flex justify-content-end">
     <!-- Modal boton agregar educacion -->
-    <button #expe3 type="button" class="btn text-white d-flex flex-row align-items-start ani"
+    <button #expe3 type="button" class="btn text-white d-flex flex-row align-items-center ani"
       (click)="addEditExperiencia(id)" *ngIf="loggedIn">
       <i class="fa-solid fa fa-plus m-1"></i>
       <span>Agregar</span>
     </button>
   </div>
   <!-- Botones de seleccion -->
-  <div class=" row d-flex flex-row align-items-center justify-content-center ani" #expe1>
+  <div #expe1 class=" row d-flex flex-row align-items-center justify-content-center ani" cdkDropList (cdkDropListDropped)="drop($event)">
     <div class="col-lg-3 col-md-11 d-flex p-2" id="botones">
-      <div *ngFor="let expe of experiencias; let i = index">
+      <div *ngFor="let expe of experiencias; let i = index" cdkDrag [cdkDragDisabled]="!loggedIn">
         <button class="circulo text-center m-3" autofocus (click)="seleccionado(expe.id)"
           [ngClass]="{'active': selectedItem == expe.id}">
           <p class="nombre">{{expe.nombre}}</p>

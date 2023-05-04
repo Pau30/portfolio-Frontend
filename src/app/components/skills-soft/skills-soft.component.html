@@ -12,7 +12,7 @@
   <!-- Cuerpo de la seccion -->
   <div #softskills class="col-12 mt-5 mb-5 d-flex flex-wrap justify-content-evenly align-items-center ani" cdkDropList
     (cdkDropListDropped)="drop($event)">
-    <div *ngFor="let skill of skillSoft; let i = index" cdkDrag>
+    <div *ngFor="let skill of skillSoft; let i = index" cdkDrag [cdkDragDisabled]="!loggedIn">
       <div class="card m-2" style="width: 18rem;">
         <img [src]="skill.imagen" class="card-img-top" alt="skill">
         <div class="card-body ">

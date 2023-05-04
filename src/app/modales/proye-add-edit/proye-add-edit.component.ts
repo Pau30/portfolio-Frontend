@@ -22,6 +22,8 @@ export class ProyeAddEditComponent {
     nombre: new FormControl<string>('', Validators.compose([Validators.required])),
     imagen: new FormControl('', Validators.compose([Validators.required])),
     descripcion: new FormControl('', Validators.compose([Validators.required])),
+    link: new FormControl('', Validators.compose([Validators.required])),
+    anio: new FormControl(null, Validators.compose([Validators.required])),
   });
 
   constructor(
@@ -45,6 +47,14 @@ export class ProyeAddEditComponent {
     return this.formEditProyecto.get('descripcion');
   }
 
+  get Link() {
+    return this.formEditProyecto.get('link');
+  }
+
+  get Anio() {
+    return this.formEditProyecto.get('anio');
+  }
+
   //Metodo para traer datos al modal
   onGet(id: any) {
     this.id = this.proyectoService.verProyecto(id);
@@ -60,6 +70,8 @@ export class ProyeAddEditComponent {
           nombre: this.traerData.nombre,
           imagen: this.traerData.imagen,
           descripcion: this.traerData.descripcion,
+          link:this.traerData.link,
+          anio:this.traerData.anio
         });
       }
       )
