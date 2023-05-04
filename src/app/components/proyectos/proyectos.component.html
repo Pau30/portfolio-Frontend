@@ -11,13 +11,15 @@
  </div>
  <!-- Cuerpo de la seccion -->
   <div #proyecto1 class="col-12 d-flex flex-wrap justify-content-evenly align-items-center mt-5 mb-5 ani" cdkDropList (cdkDropListDropped)="drop($event)">
-    <div *ngFor="let proyecto of proyectos; let i = index" cdkDrag>
+    <div *ngFor="let proyecto of proyectos; let i = index" cdkDrag [cdkDragDisabled]="!loggedIn">
       <div class="card m-2 " style="width: 18rem;">
+        <a href={{proyecto.link}}>
         <img [src]="proyecto.imagen" class="card-img-top" alt="proyecto">
         <div class="card-body align-items-strech">
-          <h5 class="card-title ">{{proyecto.nombre}}</h5>
+          <h5 class="card-title ">{{proyecto.nombre}} - {{proyecto.anio}}</h5>
           <p class="card-text text-white">{{proyecto.descripcion}}</p>
         </div>
+      </a>
       </div>
       <div class="container d-flex justify-content-center">
         <!-- Modal boton edicion Soft Skills -->

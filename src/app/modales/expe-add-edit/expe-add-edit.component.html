@@ -37,7 +37,7 @@
         <label for="InputLogoExpe" class="form-label">Logo</label>
         <input *ngIf="addMode" type="file" accept=".jpg , .jpeg , .jfif , .pjpeg , .pjp,.png,.svg"
           class="custom-file-input form-control" formControlName="logo" id="EditLogoEXpe"
-          placeholder="Seleccionar imagen logo"
+          placeholder="Seleccionar logo"
           [ngClass]="{'is-invalid': Logo?.errors  && Logo?.touched, 'is-valid': !Logo?.errors  && Logo?.touched }">
         <input *ngIf="!addMode" type="text" class="form-control" formControlName="logo" id="EditLogoEXpe"
           placeholder="Seleccionar imagen logo"

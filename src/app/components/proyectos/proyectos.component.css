@@ -34,8 +34,12 @@ span{
   color: #ffffff;
 }
 
-/*Borde blanco inferior titulo*/
+/*Texto card*/
+a{
+  text-decoration: none;
+}
 
+/*Borde blanco inferior titulo*/
 .titulo {
   border-bottom: 1px solid #ffffff;
 }

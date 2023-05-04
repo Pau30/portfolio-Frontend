@@ -52,7 +52,7 @@
           placeholder="Seleccionar imagen logo"
           [ngClass]="{'is-invalid': Logo?.errors  && Logo?.touched, 'is-valid': !Logo?.errors  && Logo?.touched }">
         <input type="text" *ngIf="!addMode" class="form-control" formControlName="logo" id="EditLogoEdu"
-          placeholder="Seleccionar imagen logo"
+          placeholder="Seleccionar logo"
           [ngClass]="{'is-invalid': Logo?.errors  && Logo?.touched, 'is-valid': !Logo?.errors  && Logo?.touched }">
         <div *ngIf="Logo?.errors && Logo?.touched">
           <p *ngIf="Logo?.hasError('required')" class="text-danger">
