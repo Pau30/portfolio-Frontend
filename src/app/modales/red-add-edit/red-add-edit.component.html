@@ -1,0 +1,55 @@
+<!-- Modal -->
+<ng-template #content let-modal>
+  <form [formGroup]="formAddEditRed" (ngSubmit)="onSave($event)">
+
+    <!-- Titulo -->
+    <div class="modal-header">
+      <h5 class="modal-title" id="editRedModalLabel" *ngIf="!addMode">Editar Red</h5>
+      <h5 class="modal-title" id="addRedModalLabel" *ngIf="addMode">Agregar Red</h5>
+      <button type="button" class="btn-close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+      <!-- Input Nombre -->
+      <div class="mb-3">
+        <label for="InputNombreRed" class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre" id="EditarNombreRed"
+          placeholder="Ingresar nombre"
+          [ngClass]="{'is-invalid': Nombre?.errors  && Nombre?.touched, 'is-valid': !Nombre?.errors  && Nombre?.touched }">
+        <div *ngIf="Nombre?.errors && Nombre?.touched">
+          <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+            Ingresar nombre
+          </p>
+        </div>
+      </div>
+      <!-- Input Icon -->
+      <div class="mb-3">
+        <label for="InputIconRed" class="form-label">Icon</label>
+        <input type="text" class="form-control" formControlName="icon" id="InputEditarIconRed" placeholder="Editar Icon"
+          [ngClass]="{'is-invalid': Icon?.errors  && Icon?.touched, 'is-valid': !Icon?.errors  && Icon?.touched }">
+        <div *ngIf="Icon?.errors && Icon?.touched">
+          <p *ngIf="Icon?.hasError('required')" class="text-danger">
+            Ingresar Icon
+          </p>
+        </div>
+      </div>
+      <!-- Input Link -->
+      <div class="mb-3">
+        <label for="InputLinkRed" class="form-label">Link</label>
+        <input type="text" class="form-control" formControlName="link" id="EditarRedLink" placeholder="Ingresar Link"
+          [ngClass]="{'is-invalid': Link?.errors  && Link?.touched, 'is-valid': !Link?.errors  && Link?.touched }">
+        <div *ngIf="Link?.errors && Link?.touched">
+          <p *ngIf="Link?.hasError('required')" class="text-danger">
+            Ingresar link
+          </p>
+        </div>
+      </div>
+
+      <!-- Boton Agregar/Guardar -->
+      <div class="modal-footer">
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="!addMode">Guardar</button>
+        <button type="submit" class="btn" data-bs-dismiss="modal" *ngIf="addMode">Agregar</button>
+      </div>
+    </div>
+  </form>
+</ng-template>

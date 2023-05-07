@@ -1,0 +1,26 @@
+<!-- Modal boton agregar Hobby -->
+<button type="button" class="btn text-white plus p-0"
+(click)="addEditRedes(id)" *ngIf="loggedIn">
+<i class="fa-solid fa fa-plus"></i>
+</button>
+<div class="mb-3" cdkDropList (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let red of redes; let i = index" id="redes" cdkDrag [cdkDragDisabled]="!loggedIn">
+    <ul class="p-0">
+      <li class="d-flex flex-column align-items-center justify-content-center" id="icons">
+        <a class="btn" href="#!" role="button">
+          <i class="fa {{red.icon}} fa-2x text-white p-0 m-0"></i>
+        </a>
+      </li>
+      <div class="container d-flex justify-content-end">
+
+       <!-- Boton modal edicion -->
+    <i class="fa-solid fa-pencil text-white m-1" (click)="addEditRedes(red.id)" *ngIf="loggedIn"></i>
+    <!--Boton eliminar -->
+    <i class="fa-solid fa-trash text-white m-1" (click)="deleteRedes(red.id)" *ngIf="loggedIn"></i>
+      </div>
+    </ul>
+  </div>
+    </div>
+
+
+<app-red-add-edit></app-red-add-edit>
