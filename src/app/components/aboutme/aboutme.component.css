@@ -1,14 +1,6 @@
-@import "@fontsource/fredoka-one";
-@import "@fontsource/roboto";
-
-
 /*Estilos generales*/
 .container-fluid {
   margin-top: 100px;
-}
-
-.col {
-  margin: 2%;
 }
 
 /*Estilo titulo principal y animacion*/
@@ -34,23 +26,17 @@ h1.fadeIn {
 .ani {
   opacity: 0;
   transition: 2s;
-  transform:translateX(-100px);
+  transform: translateX(-100px);
 }
 
 .ani.fadeIn {
- opacity: 1;
- transform:translateX(-0px);
+  opacity: 1;
+  transform: translateX(-0px);
 }
 
-
-/*Estilo imgen*/
-.yoimg {
-  padding: 0.6%;
-  border-radius: 50%;
-  border: 10px double #ffffff;
-  min-width: 100px;
-  width: 15%;
-  height: auto;
+/*Borde blanco inferior titulo*/
+.titulo {
+  border-bottom: 1px solid #ffffff;
 }
 
 /*Estilos descripcion*/
@@ -62,83 +48,86 @@ h1.fadeIn {
 }
 
 /*Estilos hobbies*/
-#listHobby{
+#listHobby {
   list-style: none;
   float: left;
 }
 
-#icons{
+#icons {
   width: 80px;
   height: 80px;
   border: 2px solid #ffffff;
   border-radius: 10%;
   background-color: #C91A76;
 }
-#hobbyNombre{
+
+#hobbyNombre {
   font-size: 12px;
 }
 
-#addBtn{
+#addBtn {
   font-size: 18px;
 }
 
+/*Estilos card*/
 
-/* Cards */
+#carta{
+  display: flex;
+  flex-direction: row;
+}
+
 .card-column {
   width: 50%;
   float: left;
   padding: 4%;
-  box-sizing: border-box;
 }
 
 .card {
-  width: 90%;
-  max-width:280px;
-  min-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 280px;
+  min-width: 250px;
   position: relative;
-  background: #00EBC6;
   color: #fff;
-  margin-bottom: 10px;
+  background-color: #00EBC6;
 }
 
 .border {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  max-width: 280px;
+  min-width: 270px;
   padding: 6px;
   border: 1px solid #fff;
-  opacity: 0.5;
-  left: -6px;
-  top: -6px;
+  border-radius: 10px;
 }
 
 .card h5 {
   position: relative;
-  font-size: 18px;
+  font-size: 22px;
   width: 70%;
-  padding: 320px 0px 10px 10px;
+  padding: 295px 0px 5px 5px;
   color: #ffffff;
 }
 
-.card > img {
+/* Estilos imagen*/
+.card>img {
   width: 90%;
   position: absolute;
-  top: -3%;
-  left: -3%;
+  top: -6%;
+  left: -6%;
   border-radius: 10px;
 }
 
-
-/*
-** Media Queries
-*/
-
-@media screen and (max-width: 600px) {
+/* Media Queries*/
+@media screen and (max-width: 767.98px) {
   .card-column {
     width: 90%;
   }
 
+  #carta{
+    flex-direction: column;
+  }
 
+  .border{
+    margin-left: 15%;
+    margin-right: 10%;
+  }
 }
+

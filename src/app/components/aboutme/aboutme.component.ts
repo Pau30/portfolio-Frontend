@@ -15,20 +15,20 @@ import { TokenService } from 'src/app/services/token.service';
 })
 export class AboutmeComponent {
   persona: Persona = new Persona("", "", "");
-  intereses: Interes[]=[];
-  id:any;
+  intereses: Interes[] = [];
+  id: any;
   loggedIn = false;
 
   //Permite tener acceso a las funciones del modal editar
   @ViewChild(AboutmeAddEditComponent) editView !: AboutmeAddEditComponent
   @ViewChild(InteresAddEditComponent) editintView !: InteresAddEditComponent
 
-  constructor(private aboutmeService: AboutmeService, private interesService:InteresService, private tokenService: TokenService) { }
-
+  constructor(private aboutmeService: AboutmeService, private interesService: InteresService, private tokenService: TokenService) { }
+  //Lo que se carga cuando se carga la pagina
   ngOnInit(): void {
-
     this.cargarPersona(1);
     this.cargarInteres();
+    //Booleano que oculta los botones de edicion, etc si el usuario no esta loggedIn
     if (this.tokenService.getToken()) {
       console.log("Logeado");
       this.loggedIn = true;
@@ -37,37 +37,39 @@ export class AboutmeComponent {
     }
   }
 
+//Metodo para cargar la persona
   cargarPersona(id: number): void {
     this.aboutmeService.verPersona(id).subscribe(data => { this.persona = data });
   }
 
- cargarInteres(): void {
-  this.interesService.listInteres().subscribe(data => { this.intereses = data });
-}
+  //Metodo para cargar los hobbies
+  cargarInteres(): void {
+    this.interesService.listInteres().subscribe(data => { this.intereses = data });
+  }
 
   //Metodo para editar persona
   EditPersona(id: any) {
     this.editView.onGet(id);
   }
 
- //Metodo para editar o agregar
- addEditInteres(id: any) {
-  this.editintView.onGet(id);
-}
-
-//Metodo para borrar
-deleteInteres(id: number) {
-  if (confirm('¿Estas seguro que queres eliminar este hobby?')) {
-    this.interesService.eliminarInteres(id).subscribe(data => {
-      this.cargarInteres();
-    })
+  //Metodo para editar o agregar
+  addEditInteres(id: any) {
+    this.editintView.onGet(id);
   }
-}
 
- //Metodo drag and drop
- drop(event: CdkDragDrop<string[]>) {
-  moveItemInArray(this.intereses, event.previousIndex, event.currentIndex);
-}
+  //Metodo para borrar
+  deleteInteres(id: number) {
+    if (confirm('¿Estas seguro que queres eliminar este hobby?')) {
+      this.interesService.eliminarInteres(id).subscribe(data => {
+        this.cargarInteres();
+      })
+    }
+  }
+
+  //Metodo drag and drop
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.intereses, event.previousIndex, event.currentIndex);
+  }
 
   //Creacion del intersectionObserver para darle animacion a los elementos cuando aparecen
   ngAfterViewInit() {

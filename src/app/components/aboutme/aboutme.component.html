@@ -1,7 +1,6 @@
 <div class="container-fluid mb-5 flex-column" id="aboutme">
   <!-- Nombre -->
-    <h1 #about class="titulo mt-5 mb-0 ani">About Me</h1>
-<div></div>
+    <h1 #about class="titulo mt-5 mb-5 ani">Sobre mi</h1>
 
 <div class="container d-flex align-items-end justify-content-end mt-5">
   <!-- Boton modal edicion -->
@@ -10,36 +9,31 @@
   <i class="fa-solid fa-trash m-2 text-white" *ngIf="loggedIn"></i>
 </div>
 <!--Imagen -->
-  <div class="container d-flex flex-row mt-1">
-    <div #about2 class="card-column p-0">
-      <div class="card">
-        <div class="border"></div>
+  <div #about2 class="container mt-1 ani" id="carta">
+    <div  class="card-column border">
+      <div class="card p-0">
         <img [src]="persona.imagen" alt="yo"/>
         <h5>{{persona.nombre}}</h5>
       </div>
       </div>
        <!--Descripcion -->
-      <div #about3 class="container d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-center mt-3 ml-5">
         <p class="text-white" id="descrip"> {{persona.descripcion}}
         </p>
       </div>
         </div>
 
-
-
-  <div #about3 class="container d-flex align-items-center flex-column mt-1 ">
+  <div #about3 class="container d-flex align-items-center flex-column mt-1 ani">
     <!-- Modal boton agregar Hobby -->
-    <div class="container d-flex justify-content-end mt-2 mb-1">
+    <div class="container d-flex justify-content-end mt-2">
     <button type="button" class="btn text-white"
       (click)="addEditInteres(id)" *ngIf="loggedIn">
       <i class="fa-solid fa fa-plus fa-1x m-1"></i>
       <span class="text-white" id="addBtn">Agregar</span>
     </button>
   </div>
-
-
     <!--Hobbies -->
-    <div class=" mb-5 " cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="mt-3 mb-5 " cdkDropList (cdkDropListDropped)="drop($event)">
       <div *ngFor="let interes of intereses; let i = index" id="listHobby" cdkDrag [cdkDragDisabled]="!loggedIn">
         <ul>
           <li class="d-flex flex-column align-items-center justify-content-center mb-1" id="icons">
