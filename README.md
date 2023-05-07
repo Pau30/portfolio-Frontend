@@ -9,18 +9,21 @@
 <img src="https://github.com/Pau30/portfolio-frontend/blob/main/src/assets/img/portproye.jpg">
 </div>
 <br>
-- Es una **SPA (Single Page Application)** realizada con las siguientes tecnologías Frontend: 
 
-<p align="left"> 
-<a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> 
-<a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> 
-<a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> 
-<a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
-</a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a>
- </p>
+- Es una **SPA (Single Page Application)** realizada con las siguientes tecnologías Frontend: 
 <br>
 
-## :file_folder: Sobre el proyecto
+<p align="left"> 
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+ ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+ ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+<br>
+
+## :computer: Sobre el proyecto
 
 - El portfolio cuenta con varias **secciones** con la información del propietario y se puede navegar desde la **barra de navegación** que se encuentra en la parte superior.
 
@@ -41,8 +44,23 @@
 </div>
 <br>
 
-## :email: Contacto
-:information_desk_person: Si tienes dudas o te interesa ponerte en contacto conmigo podés hacerlo a través de:
-**[LinkedIn ](https://www.linkedin.com/in/paula-caviglia-4b141b87/) - [Github ](https://github.com/Pau30) 
+  ## :gear: Instalación
+  Para instalar la aplicación en un entorno local tenes que seguir los siguientes pasos: 
 
-*NOTA: En este repositorio se encuentra todo lo relacionado al **Frontend** del proyecto, si queres ver el repositorio del **Backend** **[hacer click aquí](https://github.com/Pau30/portfolio-backend "aquí").***
+  1. Clona el repositorio utilizando GIT o descarga el archivo ZIP:
+
+      `git clone https://github.com/Pau30/portfolio-frontend.git`
+
+  2. A través de NPM, instala las dependencias .
+
+      `npm install`
+
+  3. Compila y monta el proyecto utilizando el comando `ng serve`
+
+  *NOTA: Este repositorio solo contiene lo relacionado al **Frontend** del proyecto, para obtener los datos y que el login funcione es necesario tener un servidor con la parte del **Backend** activa. Si queres ver el repositorio del **Backend** **[hace click aquí](https://github.com/Pau30/portfolio-backend).**
+
+## :email: Contacto
+:information_desk_person: Si tienes dudas/consultas o si te interesa ponerte en contacto conmigo no dudes en escribirme a:
+**[Github ](https://github.com/Pau30) - [LinkedIn ](https://www.linkedin.com/in/paula-caviglia-4b141b87/)**
+
+
