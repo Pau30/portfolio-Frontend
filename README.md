@@ -1,31 +1,37 @@
-# Mi Portfolio - Argentina Programa 4ta Edición - YoProgramo
+# Mi Portfolio :grey_exclamation: - Argentina Programa 4ta Edición - YoProgramo
 
-<center>
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) &nbsp;
-</center>
+![GitHub Release Date](https://img.shields.io/github/release-date/burgosmanuel/portfolio-frontend) 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+## :page_facing_up: Introduccion
 
-## Development server
+-Parte del **Frontend** de un ***Portfolio Web Personal Fullstack*** hecho como proyecto final integrador para el curso **Argentina Programa - #YoProgramo 4ta edición**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Es una **SPA (Single Page Application)** realizada con las siguientes tecnologías Frontend: 
 
-## Code scaffolding
+<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## :file_folder: Sobre el proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- El portfolio cuenta con varias **secciones** con la información del propietario y se puede navegar desde la **barra de navegación** que se encuentra en la parte superior.
 
-## Running unit tests
+<div align="center">
+<img src=""><img src="">
+</div>
+<br>
+-En la **barra de navegación** tambien encontramos el **boton de login**, que le permite al propietario ingresar al **modo de edición**. 
+<div align="center">
+<img src="">
+</div>
+<br>
+-Una vez habilitado el **modo de edición**, se puede modificar la informacion de las diferentes secciones por medio de los botones **agregar, editar y borrar** 
+<div align="center">
+<img src="">
+</div>
+<br>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :email: Contacto
+:information_desk_person: Si tienes dudas o te interesa ponerte en contacto conmigo podés hacerlo a través de:
+**[LinkedIn ](https://www.linkedin.com/in/paula-caviglia-4b141b87/) - [Github ](https://github.com/Pau30) 
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*NOTA: En este repositorio se encuentra todo lo relacionado al **Frontend** del proyecto, si queres ver el repositorio del **Backend** **[hacer click aquí](https://github.com/Pau30/portfolio-backend "aquí").***
