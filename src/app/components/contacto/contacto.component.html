@@ -1,39 +1,28 @@
-    <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #a3115f;" id="contacto">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: CTA -->
-        <h1 id="titulo" >Contactame!</h1>
-          <p class="d-flex justify-content-center align-items-center">
-            <span class="me-3">Actualmente estoy buscando nuevas oportunidades, por lo que mi bandeja de entrada está siempre abierta!</span>
-        </p>
-        </div>
-         <a type="button" class="btn btn-outline-light btn-rounded mb-3" href="mailto:pacaviglia@gmail.com">
-            pacaviglia@gmail.com
-        </a>
-        <div>
-          <a class="btn" href="#!" role="button">
-            <i class="fa fa-facebook-square fa-2x text-white"></i>
-          </a>
-
-          <a class="btn" href="#!" role="button">
-            <i class="fa fa-instagram fa-2x text-white"></i>
-          </a>
-
-          <a class="btn" href="#!" role="button">
-            <i class="fa fa-github fa-2x text-white"></i>
-          </a>
-
-        </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div class="text-start p-2" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright:Paula Caviglia
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
-
-
+<!-- Footer -->
+<footer class="text-center text-white" style="background-color: #a3115f;" id="back">
+  <!-- Seccion-->
+  <div class="container p-4 pb-0" id="contacto">
+    <!-- Contacto-->
+    <h1 id="titulo">Contactame!</h1>
+    <!-- Boton modal edicion -->
+    <i class="fa-solid fa-pencil m-2 text-white d-flex justify-content-end" (click)="editContacto(contacto.id)" *ngIf="loggedIn"></i>
+    <!-- Mensaje-->
+    <p class="d-flex justify-content-center align-items-center">
+      <span class="mb-3">{{contacto.mensaje}}</span>
+    </p>
+  </div>
+  <!-- Mail-->
+  <div class="container d-flex flex-row justify-content-center mb-3">
+    <a type="button" class="btn btn-outline-light btn-rounded" href="mailto:{{contacto.email}}">
+      {{contacto.email}}
+    </a>
+  </div>
+  <div class="container d-flex justify-content-center mb-3">
+    <app-red></app-red>
+  </div>
+  <!-- Copyright -->
+  <div class="text-start p-2 d-flex align-items-end mt-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:Paula Caviglia
+  </div>
+</footer>
+<app-contacto-add-edit></app-contacto-add-edit>

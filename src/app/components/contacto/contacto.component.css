@@ -1,6 +1,21 @@
+
+/*Estilo titulo*/
 #titulo{
   font-family: "Fredoka One", sans-serif;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1rem + 3.5vw);
   color: #00EBC6;
   -webkit-text-stroke: 1px #ffffff;
 }
+
+/*Fondo seccion*/
+#back{
+  background-image: url("~src/assets/img/background.png");
+  min-height: 350px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
