@@ -2,47 +2,46 @@
   margin-bottom: 10px;
 }
 
-#logo{
-  margin-right: 10px;
-}
-
+/*Estilo logo ArgProg*/
 #argprog {
   height: 70px;
   width: auto;
 }
 
-.navbar-nav.nav-item {
-  user-select: none;
-  font-size: medium;
-  font-weight: 400;
-}
-
+/*Estilo nombre de secciones*/
 .nav-link:focus,
 .nav-link:hover {
-  color: #fff;
-  font-weight: 600;
   text-decoration: underline;
   transform: scale(103%);
 }
 
 
-
+/*Estilo boton*/
 .btn-light{
   background-color: #C91A76;
-  color: #fff;
+
 }
 
+
+.dropdown-item:active{
+
+background-color: #C91A76;
+}
+
+.nav-pills .open .dropdown-toggle, .nav > .open.active > a:focus {
+  background-color:#222;
+  border-color: #333;
+  }
+
+/*Estilo botones redes*/
 .btn:hover {
   transform: scale(120%);
 }
 
-.navbar-expand-md .navbar-nav {
-  flex-wrap: wrap;
-}
 
-.dropdown.open.active
-{
-  color: #fff;
-  background-color: #b91773;
-  border-color: #fff;
+/* Media Queries*/
+@media screen and (max-width: 767.98px) {
+  .redes{
+    display: none;
+  }
 }

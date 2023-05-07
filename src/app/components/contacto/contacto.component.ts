@@ -13,6 +13,7 @@ export class ContactoComponent {
   contacto: Contacto = new Contacto("", "");
   id: any;
   loggedIn = false;
+  onNav=false;
 
   //Permite tener acceso a las funciones del modal editar
   @ViewChild(ContactoAddEditComponent) editView !: ContactoAddEditComponent
@@ -22,7 +23,7 @@ export class ContactoComponent {
   //Lo que se carga cuando se carga la pagina
   ngOnInit(): void {
     this.cargarContacto(1);
-    //Booleano que oculta los botones de edicion, etc si el usuario no esta loggedIn
+     //Booleano que oculta los botones de edicion, etc si el usuario no esta loggedIn
     if (this.tokenService.getToken()) {
       console.log("Logeado");
       this.loggedIn = true;

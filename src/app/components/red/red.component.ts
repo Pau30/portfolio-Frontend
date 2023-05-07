@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { RedAddEditComponent } from 'src/app/modales/red-add-edit/red-add-edit.component';
 import { Red } from 'src/app/model/red';
 import { RedService } from 'src/app/services/red.service';
@@ -14,6 +14,8 @@ export class RedComponent {
   redes: Red[] = [];
   id: any;
   loggedIn = false;
+  //Input para solo habilitar los botones de edicion en la seccion de contacto y no en la navbar
+  @Input() onNav = true;
 
   //Permite tener acceso a las funciones del modal editar
   @ViewChild(RedAddEditComponent) editRedView !: RedAddEditComponent

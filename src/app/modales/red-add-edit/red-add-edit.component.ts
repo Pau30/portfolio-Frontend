@@ -79,11 +79,11 @@ export class RedAddEditComponent {
         this.editar = data;
       })
       if (this.addMode) {
-        alert("Red agregado correctamente")
+        alert("Red agregada correctamente")
         window.location.reload();
       }
       if (!this.addMode) {
-        alert("Red editado correctamente")
+        alert("Red editada correctamente")
         window.location.reload();
       }
     } else {

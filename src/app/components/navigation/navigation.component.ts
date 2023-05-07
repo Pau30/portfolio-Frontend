@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/services/token.service';
 
 
 export class NavigationComponent {
-
+  onNav= true;
   loggedIn = false;
 
   constructor(private tokenService: TokenService) { }

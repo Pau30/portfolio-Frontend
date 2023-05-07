@@ -13,9 +13,7 @@ export class ContactoAddEditComponent {
   editar: any;
   addMode = true;
   id: any;
-
-
-
+  
   constructor(
     private modalService: NgbModal, private contactoService: ContactoService) { }
 
