@@ -3,7 +3,7 @@
 
 h1 {
   font-family: "Fredoka One", sans-serif;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1rem + 3.5vw);
   text-align: start;
   color: #00EBC6;
   -webkit-text-stroke: 1px #ffffff;
@@ -85,6 +85,8 @@ span{
 .japones {
   background: linear-gradient(to left, #BB377D 0%, #FBD3E9 100%);
 }
+
+/* Media Queries*/
 
 @media (max-width: 767.98px) {
   h1 {

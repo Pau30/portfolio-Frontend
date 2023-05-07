@@ -20,7 +20,7 @@
       <!-- Listado Frontend Skills -->
       <div cdkDropList (cdkDropListDropped)="drop($event)">
         <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo" cdkDrag [cdkDragDisabled]="!loggedIn">
-          <div class="container m-3" *ngSwitchCase="'Frontend'">
+          <div class="container mt-3 mb-3" *ngSwitchCase="'Frontend'">
             <div class="container d-flex flex-row">
               <div class="container d-flex align-items-end">
                 <h6 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h6>
@@ -59,7 +59,7 @@
       <!-- Listado Backend Skills -->
       <div cdkDropList (cdkDropListDropped)="drop($event)">
       <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo" cdkDrag [cdkDragDisabled]="!loggedIn">
-        <div class="container m-3" *ngSwitchCase="'Backend'">
+        <div class="container mt-3 mb-3" *ngSwitchCase="'Backend'">
           <div class="container d-flex flex-row">
             <div class="container d-flex align-items-end">
               <h5 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h5>
@@ -94,7 +94,7 @@
       <!-- Listado Idiomas -->
       <div cdkDropList (cdkDropListDropped)="drop($event)">
       <div *ngFor="let skill of skills; let i = index" [ngSwitch]="skill.tipo" cdkDrag [cdkDragDisabled]="!loggedIn">
-        <div class="container m-3" *ngSwitchCase="'Idioma'">
+        <div class="container mt-3 mb-3" *ngSwitchCase="'Idioma'">
           <div class="container d-flex flex-row">
             <div class="container d-flex align-items-end">
               <h5 class="font-weight-bold text-uppercase text-white">{{skill.nombre}}</h5>

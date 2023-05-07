@@ -4,7 +4,7 @@
 /*Estilo titulo principal y animacion*/
 h1 {
   font-family: "Fredoka One", sans-serif;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1rem + 3.5vw);
   text-align: start;
   color: #00EBC6;
   -webkit-text-stroke: 1px #ffffff;
@@ -131,7 +131,7 @@ span{
 /*Estilo descripcion*/
 #descri{
   font-family: "Roboto", sans-serif;
-  
+
  }
 
 /*Logo empresa*/

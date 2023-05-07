@@ -1,7 +1,7 @@
 /*Estilo titulo principal y animacion*/
 h1 {
   font-family: "Fredoka One", sans-serif;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1rem + 3.5vw);
   text-align: start;
   color: #00EBC6;
   -webkit-text-stroke: 1px #ffffff;
@@ -44,11 +44,6 @@ a{
   border-bottom: 1px solid #ffffff;
 }
 
-/*Titulo Card*/
-h5 {
-  color: #ffffff;
-  font-size: calc(.6rem + .8vw);
-}
 
 /*Cuerpo Card*/
 .card-body {
@@ -59,6 +54,7 @@ img{
   width: 100%;
 }
 
+/* Media Queries*/
 @media (max-width: 767.98px) {
   h1 {
     letter-spacing: 7px;
