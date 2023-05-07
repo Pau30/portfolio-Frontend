@@ -70,8 +70,8 @@ export class ProyeAddEditComponent {
           nombre: this.traerData.nombre,
           imagen: this.traerData.imagen,
           descripcion: this.traerData.descripcion,
-          link:this.traerData.link,
-          anio:this.traerData.anio
+          link: this.traerData.link,
+          anio: this.traerData.anio
         });
       }
       )

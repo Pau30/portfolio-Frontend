@@ -69,13 +69,11 @@ export class EduAddEditComponent {
     if (id === undefined) {
       this.addMode = true;
       this.formAddEditEdu.reset();
-      console.log("paso 1");
-    } else {
+      } else {
       this.addMode = false;
       this.educacionService.verEducacion(id).subscribe((data) => {
         this.traerData = data;
-        console.log("paso 2");
-        this.formAddEditEdu.setValue({
+         this.formAddEditEdu.setValue({
           id: this.traerData.id,
           nombre: this.traerData.nombre,
           nombreCorto: this.traerData.nombreCorto,

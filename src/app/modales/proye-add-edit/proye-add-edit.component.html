@@ -47,30 +47,29 @@
             </p>
           </div>
         </div>
-         <!-- Input Link -->
-      <div class="mb-3">
-        <label for="InputLinkProyecto" class="form-label">Link</label>
-        <input type="text" class="form-control" formControlName="link" id="EditarProyectoLink"
-          placeholder="Ingresar Link"
-          [ngClass]="{'is-invalid': Link?.errors  && Link?.touched, 'is-valid': !Link?.errors  && Link?.touched }">
-        <div *ngIf="Link?.errors && Link?.touched">
-          <p *ngIf="Link?.hasError('required')" class="text-danger">
-            Ingresar link
-          </p>
+        <!-- Input Link -->
+        <div class="mb-3">
+          <label for="InputLinkProyecto" class="form-label">Link</label>
+          <input type="text" class="form-control" formControlName="link" id="EditarProyectoLink"
+            placeholder="Ingresar Link"
+            [ngClass]="{'is-invalid': Link?.errors  && Link?.touched, 'is-valid': !Link?.errors  && Link?.touched }">
+          <div *ngIf="Link?.errors && Link?.touched">
+            <p *ngIf="Link?.hasError('required')" class="text-danger">
+              Ingresar link
+            </p>
+          </div>
         </div>
-      </div>
-       <!-- Input Anio -->
-       <div class="mb-3">
-        <label for="InputAnio" class="form-label">Anio</label>
-        <input type="number" class="form-control" formControlName="anio" id="EditarAnio"
-          placeholder="Ingresar año"
-          [ngClass]="{'is-invalid': Anio?.errors && Anio?.touched, 'is-valid': !Anio?.errors  && Anio?.touched }">
-        <div *ngIf="Anio?.errors  && Anio?.touched">
-          <p *ngIf="Anio?.hasError('required')" class="text-danger">
-            El año es requerido.
-          </p>
+        <!-- Input Anio -->
+        <div class="mb-3">
+          <label for="InputAnio" class="form-label">Anio</label>
+          <input type="number" class="form-control" formControlName="anio" id="EditarAnio" placeholder="Ingresar año"
+            [ngClass]="{'is-invalid': Anio?.errors && Anio?.touched, 'is-valid': !Anio?.errors  && Anio?.touched }">
+          <div *ngIf="Anio?.errors  && Anio?.touched">
+            <p *ngIf="Anio?.hasError('required')" class="text-danger">
+              El año es requerido.
+            </p>
+          </div>
         </div>
-      </div>
       </div>
       <div class="modal-footer">
         <!-- Boton Agregar/Guardar -->
