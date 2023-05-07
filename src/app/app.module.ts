@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -26,7 +27,9 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { InteresAddEditComponent } from './modales/interes-add-edit/interes-add-edit.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-
+import { RedComponent } from './components/red/red.component';
+import { RedAddEditComponent } from './modales/red-add-edit/red-add-edit.component';
+import { ContactoAddEditComponent } from './modales/contacto-add-edit/contacto-add-edit.component';
 
 
 @NgModule({
@@ -52,18 +55,22 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     ErrorPageComponent,
     InteresAddEditComponent,
     WelcomeComponent,
+    RedComponent,
+    RedAddEditComponent,
+    ContactoAddEditComponent
 
   ],
 
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     DragDropModule
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })
