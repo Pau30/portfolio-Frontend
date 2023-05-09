@@ -12,7 +12,6 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { AboutmeComponent } from './components/aboutme/aboutme.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SkillsHardComponent } from './components/skills-hard/skills-hard.component';
 import { SkillsSoftComponent } from './components/skills-soft/skills-soft.component';
@@ -30,6 +29,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RedComponent } from './components/red/red.component';
 import { RedAddEditComponent } from './modales/red-add-edit/red-add-edit.component';
 import { ContactoAddEditComponent } from './modales/contacto-add-edit/contacto-add-edit.component';
+import { BackgroundComponent } from './components/background/background.component';
+import { BotonScrollComponent } from './components/boton-scroll/boton-scroll.component';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { ContactoAddEditComponent } from './modales/contacto-add-edit/contacto-a
     AboutmeComponent,
     EducacionComponent,
     ExperienciaComponent,
-    FooterComponent,
     ProyectosComponent,
     SkillsHardComponent,
     SkillsSoftComponent,
@@ -57,7 +57,9 @@ import { ContactoAddEditComponent } from './modales/contacto-add-edit/contacto-a
     WelcomeComponent,
     RedComponent,
     RedAddEditComponent,
-    ContactoAddEditComponent
+    ContactoAddEditComponent,
+    BackgroundComponent,
+    BotonScrollComponent
 
   ],
 

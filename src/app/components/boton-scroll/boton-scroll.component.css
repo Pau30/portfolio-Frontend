@@ -1,0 +1,17 @@
+/*Boton para subir*/
+.scrollToTop {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  background-color: #00ebc6;
+  border: 2px solid #ffff;
+  border-radius: 30px;
+}
+
+.showScrollToTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
+
