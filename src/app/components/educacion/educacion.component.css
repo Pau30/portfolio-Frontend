@@ -157,6 +157,8 @@ img {
   }
 }
 
+/* Media Queries*/
+
 @media (max-width: 767.98px) {
   h1 {
     letter-spacing: 7px;
@@ -165,15 +167,10 @@ img {
   .circulo {
     width: 100px;
   }
-
-
-
 }
 
 @media (max-width: 576px) {
-
   img {
     width: 40%;
   }
-
 }
