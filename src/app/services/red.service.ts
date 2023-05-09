@@ -8,7 +8,7 @@ import { Red } from '../model/red';
 })
 export class RedService {
 
-  url = 'http://localhost:8080/redes/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/redes/';
 
   constructor(private httpClient: HttpClient) { }
 

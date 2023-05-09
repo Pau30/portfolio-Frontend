@@ -7,7 +7,7 @@ import { Interes } from '../model/interes';
   providedIn: 'root'
 })
 export class InteresService {
-  url = 'http://localhost:8080/intereses/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/intereses/';
 
   constructor(private httpClient: HttpClient) { }
 

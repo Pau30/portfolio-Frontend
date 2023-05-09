@@ -9,7 +9,7 @@ import { JwtDto } from '../model/jwt-dto';
 })
 export class AuthenticationService {
 
-  url = 'http://localhost:8080/auth/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/auth/';
 
   constructor(private http: HttpClient) { }
 

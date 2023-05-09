@@ -10,7 +10,7 @@ import { Persona } from '../model/persona';
 export class AboutmeService {
   //URL del backend
 
-  url = 'http://localhost:8080/aboutme/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/aboutme/';
 
 
   //Servicio para comunicarse con el backend

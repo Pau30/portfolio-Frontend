@@ -9,7 +9,7 @@ import { SkillSoft } from '../model/skill-soft';
 })
 export class SkillSoftService {
 
-  url = 'http://localhost:8080/softSkills/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/softSkills/';
 
   constructor(private httpClient: HttpClient) { }
 

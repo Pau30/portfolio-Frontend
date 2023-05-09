@@ -10,7 +10,7 @@ export class ContactoService {
 
   //URL del backend
 
-  url = 'http://localhost:8080/contacto/';
+  url = 'https://portfolio-backend-ltmx.onrender.com/contacto/';
 
 
   //Servicio para comunicarse con el backend
