@@ -47,7 +47,7 @@ span{
 
 /* Estilos degrade de las barras de progreso de las skills*/
 .html {
-  background: linear-gradient(to left, #00C9FF 0%, #92FE9D 100%);
+  background: linear-gradient(to left, #00C9FF 0%, #6dd678 100%);
 }
 
 .css {
@@ -59,7 +59,7 @@ span{
 }
 
 .javascript {
-  background: linear-gradient(to right, #ff00aa 0%, #ffea00 100%);
+  background: linear-gradient(to right, #ff00aa 0%, #f1dd04 100%);
 }
 
 .angular {
@@ -71,7 +71,7 @@ span{
 }
 
 .spring {
-  background: linear-gradient(to left, #5dc5a6 0%, #89d163 100%);
+  background: linear-gradient(to left, #316d5b 0%, #6ea94e 100%);
 }
 
 .mysql {
@@ -79,11 +79,11 @@ span{
 }
 
 .ingles {
-  background: linear-gradient(to left, #ef32d9 0%, #89fffd 100%);
+  background: linear-gradient(to left, #ef32d9 0%, #6ed7d5 100%);
 }
 
 .japones {
-  background: linear-gradient(to left, #BB377D 0%, #FBD3E9 100%);
+  background: linear-gradient(to left, #BB377D 0%, #deacc8 100%);
 }
 
 /* Media Queries*/

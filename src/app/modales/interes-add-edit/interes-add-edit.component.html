@@ -26,11 +26,11 @@
         <div class="mb-3">
           <label for="InputIcon" class="form-label">Icon</label>
           <input type="text" class="form-control" formControlName="icon" id="InputEditarIcon"
-            placeholder="Editar Icon"
+            placeholder="Editar Icono"
             [ngClass]="{'is-invalid': Icon?.errors  && Icon?.touched, 'is-valid': !Icon?.errors  && Icon?.touched }">
           <div *ngIf="Icon?.errors && Icon?.touched">
             <p *ngIf="Icon?.hasError('required')" class="text-danger">
-              Ingresar Icon
+              Ingresar Icono
             </p>
           </div>
         </div>

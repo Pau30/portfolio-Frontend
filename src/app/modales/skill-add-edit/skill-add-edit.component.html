@@ -45,7 +45,7 @@
         <div class="mb-3">
           <label for="InputTipo" class="form-label">Tipo</label>
           <input type="text" class="form-control" formControlName="tipo" id="InputEditarTipo"
-            placeholder="Editar tipo de skill"
+            placeholder="Ingresar tipo de skill"
             [ngClass]="{'is-invalid': Tipo?.errors  && Tipo?.touched, 'is-valid': !Tipo?.errors  && Tipo?.touched }">
           <div *ngIf="Tipo?.errors && Tipo?.touched">
             <p *ngIf="Tipo?.hasError('required')" class="text-danger">
