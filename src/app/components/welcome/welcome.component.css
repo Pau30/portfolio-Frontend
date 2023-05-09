@@ -1,0 +1,222 @@
+/*Estilos titulo "Hola soy..." */
+.hola {
+  font-size: 75px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  max-width: 350px;
+  margin-top: 60px;
+}
+
+/*Estilos segunda liena soy..*/
+.segundalinea {
+  position: relative;
+  color: #C91A76;
+  display: flex;
+  align-items: center;
+  font-size: 140px;
+  font-weight: 900;
+  font-family: "Fredoka One", sans-serif;
+}
+
+.soy {
+  font-size: 75px;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  white-space: nowrap
+}
+
+.nombre {
+  margin-top: -55px;
+}
+
+/*Estilo tercera linea full..*/
+.devep {
+  font-size: 45px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Animacion en nombre*/
+@keyframes rebotar {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, .9) translateY(0);
+  }
+
+  30% {
+    transform: scale(.9, 1.1) translateY(-25px);
+  }
+
+  50% {
+    transform: scale(1.05, .95) translateY(0);
+  }
+
+  58% {
+    transform: scale(1, 1) translateY(-5px);
+  }
+
+  65% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+.p {
+  margin-left: 25px;
+  animation: rebotar 1.5s ease infinite;
+}
+
+.a {
+  margin-left: 25px;
+  animation: rebotar 1.5s ease infinite .1s;
+}
+
+.u {
+  margin-left: 25px;
+  animation: rebotar 1.5s ease infinite .2s;
+}
+
+.l {
+  margin-left: 25px;
+  animation: rebotar 1.5s ease infinite .3s;
+}
+
+.aa {
+  margin-left: 25px;
+  animation: rebotar 1.5s ease infinite .4s;
+}
+
+/*Contenedor de las tecnologias*/
+.typing {
+  margin-left: 15px;
+  height: 52px;
+  line-height: 52px;
+  overflow: hidden;
+
+}
+
+/*Listado de las tecnologias*/
+li {
+  list-style: none;
+  color: #00EBC6;
+  font-size: 35px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+
+}
+
+li span {
+  position: relative;
+  margin: 12px 0px;
+  line-height: 52px;
+}
+
+/*Animacion listado de las tecnologias*/
+@keyframes slide {
+  100% {
+    top: -207px;
+  }
+}
+
+/*After para crear el borde y la animacion*/
+li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 106%;
+  width: 100%;
+  background: rgb(10, 10, 10);
+  border-left: 3px solid;
+  animation:
+    typing-erase 3s steps(15, end) infinite,
+    blink-caret .5s step-end infinite;
+}
+
+/*Animacion escritura y borrado */
+@keyframes typing-erase {
+  0% {
+    left: 0
+  }
+
+  80% {
+    left: calc(100% + 8px)
+  }
+
+  90%,
+  100% {
+    left: 0
+  }
+}
+
+/* Animacion de la linea */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  60% {
+    border-color: #C91A76
+  }
+}
+
+/*Media Queries*/
+
+@media (max-width: 992px) {
+  .segundalinea {
+    flex-direction: column;
+    font-size: 70px;
+    align-items: start;
+  }
+
+  .p,
+  .a,
+  .u,
+  .l,
+  .aa {
+    margin-top: 60px;
+    margin-left: 10px;
+    padding-top: 10px;
+  }
+
+  .hola {
+    margin-bottom: 5px;
+    font-size: 50px;
+  }
+
+  .devep{
+    font-size: 35px;
+    white-space: wrap;
+  }
+
+  .soy {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 50px;
+  }
+
+
+  .nombre {
+    padding: 0;
+  }
+}
+
+.blink_me {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
