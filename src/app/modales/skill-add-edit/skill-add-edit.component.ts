@@ -52,12 +52,10 @@ export class SkillAddEditComponent {
     if (id === undefined) {
       this.addMode = true;
       this.formEdit.reset();
-      console.log("paso 1");
-    } else {
+      } else {
       this.addMode = false;
       this.skillHardService.verSkills(id).subscribe((data) => {
         this.traerData = data;
-        console.log("paso 2");
         this.formEdit.setValue({
           id: this.traerData.id,
           nombre: this.traerData.nombre,
